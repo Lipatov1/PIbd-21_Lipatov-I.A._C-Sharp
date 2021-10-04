@@ -30,13 +30,13 @@ namespace WindowsFormsTechnic {
 			Brush brBlack = new SolidBrush(Color.Black);
 			Brush brMain = new SolidBrush(MainColor);
 			Brush brDopColor = new SolidBrush(DopColor);
-			Brush brTower = new SolidBrush(ColorTranslator.FromHtml("#424724"));
+			Brush brTower = new SolidBrush(ColorTranslator.FromHtml("#35391f"));
 			Brush brCamouflage = new SolidBrush(ColorTranslator.FromHtml("#595677"));
 
 			base.DrawTransport(g);
 
 			// Отрисовываем гусеницу
-			g.FillRectangle(brMain, startPosX + 25, startPosY + 50, 160, 35);
+			g.FillRectangle(brTower, startPosX + 25, startPosY + 50, 160, 35);
 			g.DrawEllipse(penBlack, startPosX + 5, startPosY + 45, 35, 35);
 			g.DrawEllipse(penBlack, startPosX + 170, startPosY + 45, 35, 35);
 			g.DrawEllipse(penBlack, startPosX + 50, startPosY + 62, 20, 20);
@@ -46,7 +46,7 @@ namespace WindowsFormsTechnic {
 			g.FillEllipse(brBlack, startPosX + 70, startPosY + 45, 10, 10);
 			g.FillEllipse(brBlack, startPosX + 100, startPosY + 45, 10, 10);
 			g.FillEllipse(brBlack, startPosX + 130, startPosY + 45, 10, 10);
-			g.FillRectangle(brTower, startPosX + 7, startPosY + 30, 198, 20);
+			g.FillRectangle(brMain, startPosX + 7, startPosY + 30, 198, 20);
 
 			// Отрисовываем камуфляж
 			if (Camouflage) {

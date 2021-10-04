@@ -57,19 +57,19 @@ namespace WindowsFormsTechnic {
             Pen penBlack = new Pen(Color.Black, 3);
             Brush brBlack = new SolidBrush(Color.Black);
             Brush brMain = new SolidBrush(MainColor);
-            Brush brTower = new SolidBrush(ColorTranslator.FromHtml("#424724"));
+            Brush brTower = new SolidBrush(ColorTranslator.FromHtml("#35391f"));
             Brush brCamouflage = new SolidBrush(ColorTranslator.FromHtml("#595677"));
 
             // Отрисовываем колеса
-            g.FillEllipse(brMain, startPosX, startPosY + 40, 45, 45);
-            g.FillEllipse(brMain, startPosX + 165, startPosY + 40, 45, 45);
-            g.FillRectangle(brMain, startPosX + 25, startPosY + 40, 160, 25);
+            g.FillEllipse(brTower, startPosX, startPosY + 40, 45, 45);
+            g.FillEllipse(brTower, startPosX + 165, startPosY + 40, 45, 45);
+            g.FillRectangle(brTower, startPosX + 25, startPosY + 40, 160, 25);
             g.DrawEllipse(penBlack, startPosX + 5, startPosY + 45, 35, 35);
             g.DrawEllipse(penBlack, startPosX + 170, startPosY + 45, 35, 35);
 
             // Отрисовываем башню
-            g.FillRectangle(brTower, startPosX + 7, startPosY + 30, 198, 20);
-            g.FillRectangle(brTower, startPosX + 60, startPosY, 90, 30);
+            g.FillRectangle(brMain, startPosX + 7, startPosY + 30, 198, 20);
+            g.FillRectangle(brMain, startPosX + 60, startPosY, 90, 30);
         }
     }
 }
