@@ -20,8 +20,6 @@ namespace WindowsFormsTechnic {
 		}
 
 		// Обработка нажатия кнопки "Создать бронированный автомобиль"
-		private void buttonCreate_Click(object sender, EventArgs e) {
-		}
 		private void buttonCreateArmoredCar_Click(object sender, EventArgs e) {
 			Random rnd = new Random();
 			artillery = new ArmoredCar(rnd.Next(100, 300), rnd.Next(1000, 2000), ColorTranslator.FromHtml("#35391f"));
