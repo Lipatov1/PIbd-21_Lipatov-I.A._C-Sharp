@@ -2,7 +2,7 @@
 
 namespace WindowsFormsTechnic {
 	// Класс отрисовки cамоходной артиллерийской установки
-	class Artillery {
+	class SelfPropArtilleryInstal {
 		// Левая и правая координаты отрисовки cамоходной артиллерийской установки
 		private float startPosX;
 		private float startPosY;
@@ -12,8 +12,8 @@ namespace WindowsFormsTechnic {
 		private int pictureHeight;
 
 		// Ширина и высота отрисовки cамоходной артиллерийской установки
-		private readonly int artilleryWidth = 210;
-		private readonly int artilleryHeight = 85;
+		private readonly int SelfPropArtilleryInstalWidth = 210;
+		private readonly int SelfPropArtilleryInstalHeight = 85;
 
 		// Максимальная скорость cамоходной артиллерийской установки
 		public int MaxSpeed { private set; get; }
@@ -56,7 +56,7 @@ namespace WindowsFormsTechnic {
 			float step = MaxSpeed * 100 / Weight;
 			switch (direction) {
 				case Direction.Right:
-					if (startPosX + step < pictureWidth - artilleryWidth) {
+					if (startPosX + step < pictureWidth - SelfPropArtilleryInstalWidth) {
 						startPosX += step;
 					}
 					break;
@@ -74,7 +74,7 @@ namespace WindowsFormsTechnic {
 					break;
 
 				case Direction.Down:
-					if (startPosY + step < pictureHeight - artilleryHeight) {
+					if (startPosY + step < pictureHeight - SelfPropArtilleryInstalHeight) {
 						startPosY += step;
 					}
 					break;

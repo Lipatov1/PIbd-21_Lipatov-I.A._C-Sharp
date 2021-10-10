@@ -3,27 +3,27 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace WindowsFormsTechnic {
-	public partial class FormTechnic : Form {
-		private Artillery SelfPropArtillery;
+	public partial class FormSelfPropArtilleryInstal : Form {
+		private SelfPropArtilleryInstal SelfPropArtillery;
 
 		// Конструктор		
-		public FormTechnic() {
+		public FormSelfPropArtilleryInstal() {
 			InitializeComponent();
 		}
 
 		// Метод отрисовки cамоходной артиллерийской установки
 		private void Draw() {
-			Bitmap bmp = new Bitmap(pictureBoxArtillery.Width, pictureBoxArtillery.Height);
+			Bitmap bmp = new Bitmap(pictureBoxSelfPropArtilleryInstal.Width, pictureBoxSelfPropArtilleryInstal.Height);
 			Graphics gr = Graphics.FromImage(bmp);
 			SelfPropArtillery.DrawTransport(gr);
-			pictureBoxArtillery.Image = bmp;
+			pictureBoxSelfPropArtilleryInstal.Image = bmp;
 		}
 
 		// Обработка нажатия кнопки "Создать"
 		private void buttonCreate_Click(object sender, EventArgs e) {
 			Random rnd = new Random();
-			SelfPropArtillery = new Artillery();
-			SelfPropArtillery.Init(rnd.Next(100, 300), rnd.Next(1000, 2000), ColorTranslator.FromHtml("#35391f"), Color.Red, true, true); SelfPropArtillery.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxArtillery.Width, pictureBoxArtillery.Height);
+			SelfPropArtillery = new SelfPropArtilleryInstal();
+			SelfPropArtillery.Init(rnd.Next(100, 300), rnd.Next(1000, 2000), ColorTranslator.FromHtml("#35391f"), Color.Red, true, true); SelfPropArtillery.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxSelfPropArtilleryInstal.Width, pictureBoxSelfPropArtilleryInstal.Height);
 			Draw();
 		}
 

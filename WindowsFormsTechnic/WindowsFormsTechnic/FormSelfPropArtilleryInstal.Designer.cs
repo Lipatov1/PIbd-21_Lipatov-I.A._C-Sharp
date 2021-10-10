@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsTechnic
 {
-    partial class FormTechnic
+    partial class FormSelfPropArtilleryInstal
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,33 +29,33 @@ namespace WindowsFormsTechnic
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxArtillery = new System.Windows.Forms.PictureBox();
-            this.buttonCreate = new System.Windows.Forms.Button();
+            this.pictureBoxSelfPropArtilleryInstal = new System.Windows.Forms.PictureBox();
+            this.buttonSelfPropelledArtilleryInstallation = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtillery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelfPropArtilleryInstal)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBoxArtillery
+            // pictureBoxSelfPropArtilleryInstal
             // 
-            this.pictureBoxArtillery.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxArtillery.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArtillery.Name = "pictureBoxArtillery";
-            this.pictureBoxArtillery.Size = new System.Drawing.Size(884, 461);
-            this.pictureBoxArtillery.TabIndex = 0;
-            this.pictureBoxArtillery.TabStop = false;
+            this.pictureBoxSelfPropArtilleryInstal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxSelfPropArtilleryInstal.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxSelfPropArtilleryInstal.Name = "pictureBoxSelfPropArtilleryInstal";
+            this.pictureBoxSelfPropArtilleryInstal.Size = new System.Drawing.Size(884, 461);
+            this.pictureBoxSelfPropArtilleryInstal.TabIndex = 0;
+            this.pictureBoxSelfPropArtilleryInstal.TabStop = false;
             // 
-            // buttonCreate
+            // buttonSelfPropelledArtilleryInstallation
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(12, 12);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(75, 23);
-            this.buttonCreate.TabIndex = 1;
-            this.buttonCreate.Text = "Создать";
-            this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonSelfPropelledArtilleryInstallation.Location = new System.Drawing.Point(12, 12);
+            this.buttonSelfPropelledArtilleryInstallation.Name = "buttonSelfPropelledArtilleryInstallation";
+            this.buttonSelfPropelledArtilleryInstallation.Size = new System.Drawing.Size(75, 23);
+            this.buttonSelfPropelledArtilleryInstallation.TabIndex = 1;
+            this.buttonSelfPropelledArtilleryInstallation.Text = "Создать";
+            this.buttonSelfPropelledArtilleryInstallation.UseVisualStyleBackColor = true;
+            this.buttonSelfPropelledArtilleryInstallation.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // buttonLeft
             // 
@@ -105,7 +105,7 @@ namespace WindowsFormsTechnic
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // FormTechnic
+            // FormSelfPropArtilleryInstal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,20 +114,20 @@ namespace WindowsFormsTechnic
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonLeft);
-            this.Controls.Add(this.buttonCreate);
-            this.Controls.Add(this.pictureBoxArtillery);
-            this.Name = "FormTechnic";
+            this.Controls.Add(this.buttonSelfPropelledArtilleryInstallation);
+            this.Controls.Add(this.pictureBoxSelfPropArtilleryInstal);
+            this.Name = "FormSelfPropArtilleryInstal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Артиллерия";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtillery)).EndInit();
+            this.Text = "Самоходная артиллерийская установка";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelfPropArtilleryInstal)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBoxArtillery;
-        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.PictureBox pictureBoxSelfPropArtilleryInstal;
+        private System.Windows.Forms.Button buttonSelfPropelledArtilleryInstallation;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonRight;
