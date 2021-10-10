@@ -47,7 +47,7 @@ namespace WindowsFormsTechnic {
             return null;
         }
 
-        // Метод отрисовки парковки
+        // Метод отрисовки базы
         public void Draw(Graphics g) {
             DrawMarking(g);
             for (int i = 0; i < places.Length; i++) {
@@ -55,7 +55,7 @@ namespace WindowsFormsTechnic {
             }
         }
 
-        // Метод отрисовки разметки парковочных мест
+        // Метод отрисовки разметки парковочных мест базы
         private void DrawMarking(Graphics g) {
             Pen pen = new Pen(Color.Black, 3);
             for (int i = 0; i < pictureWidth / widthParkingPlace; i++) {

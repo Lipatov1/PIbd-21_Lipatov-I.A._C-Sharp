@@ -30,13 +30,13 @@ namespace WindowsFormsTechnic
         private void InitializeComponent()
         {
             this.buttonSetArmoredCar = new System.Windows.Forms.Button();
-            this.buttonSetArtillery = new System.Windows.Forms.Button();
-            this.groupBoxTakeTechnic = new System.Windows.Forms.GroupBox();
+            this.buttonSetSelfPropArtilleryInstal = new System.Windows.Forms.Button();
+            this.groupBoxTakeMilitaryEquipment = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
             this.labelPlace = new System.Windows.Forms.Label();
-            this.buttonTakeTechnic = new System.Windows.Forms.Button();
+            this.buttonTakeMilitaryEquipment = new System.Windows.Forms.Button();
             this.pictureBoxBase = new System.Windows.Forms.PictureBox();
-            this.groupBoxTakeTechnic.SuspendLayout();
+            this.groupBoxTakeMilitaryEquipment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBase)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,27 +50,27 @@ namespace WindowsFormsTechnic
             this.buttonSetArmoredCar.UseVisualStyleBackColor = true;
             this.buttonSetArmoredCar.Click += new System.EventHandler(this.buttonSetArmoredCar_Click);
             // 
-            // buttonSetArtillery
+            // buttonSetSelfPropArtilleryInstal
             // 
-            this.buttonSetArtillery.Location = new System.Drawing.Point(931, 78);
-            this.buttonSetArtillery.Name = "buttonSetArtillery";
-            this.buttonSetArtillery.Size = new System.Drawing.Size(121, 73);
-            this.buttonSetArtillery.TabIndex = 1;
-            this.buttonSetArtillery.Text = "Припарковать cамоходную артиллерийскую установку";
-            this.buttonSetArtillery.UseVisualStyleBackColor = true;
-            this.buttonSetArtillery.Click += new System.EventHandler(this.buttonSetArtillery_Click);
+            this.buttonSetSelfPropArtilleryInstal.Location = new System.Drawing.Point(931, 78);
+            this.buttonSetSelfPropArtilleryInstal.Name = "buttonSetSelfPropArtilleryInstal";
+            this.buttonSetSelfPropArtilleryInstal.Size = new System.Drawing.Size(121, 73);
+            this.buttonSetSelfPropArtilleryInstal.TabIndex = 1;
+            this.buttonSetSelfPropArtilleryInstal.Text = "Припарковать cамоходную артиллерийскую установку";
+            this.buttonSetSelfPropArtilleryInstal.UseVisualStyleBackColor = true;
+            this.buttonSetSelfPropArtilleryInstal.Click += new System.EventHandler(this.buttonSetSelfPropArtilleryInstal_Click);
             // 
-            // groupBoxTakeTechnic
+            // groupBoxTakeMilitaryEquipment
             // 
-            this.groupBoxTakeTechnic.Controls.Add(this.maskedTextBoxPlace);
-            this.groupBoxTakeTechnic.Controls.Add(this.labelPlace);
-            this.groupBoxTakeTechnic.Controls.Add(this.buttonTakeTechnic);
-            this.groupBoxTakeTechnic.Location = new System.Drawing.Point(931, 157);
-            this.groupBoxTakeTechnic.Name = "groupBoxTakeTechnic";
-            this.groupBoxTakeTechnic.Size = new System.Drawing.Size(121, 87);
-            this.groupBoxTakeTechnic.TabIndex = 2;
-            this.groupBoxTakeTechnic.TabStop = false;
-            this.groupBoxTakeTechnic.Text = "Забрать технику";
+            this.groupBoxTakeMilitaryEquipment.Controls.Add(this.maskedTextBoxPlace);
+            this.groupBoxTakeMilitaryEquipment.Controls.Add(this.labelPlace);
+            this.groupBoxTakeMilitaryEquipment.Controls.Add(this.buttonTakeMilitaryEquipment);
+            this.groupBoxTakeMilitaryEquipment.Location = new System.Drawing.Point(931, 157);
+            this.groupBoxTakeMilitaryEquipment.Name = "groupBoxTakeMilitaryEquipment";
+            this.groupBoxTakeMilitaryEquipment.Size = new System.Drawing.Size(121, 87);
+            this.groupBoxTakeMilitaryEquipment.TabIndex = 2;
+            this.groupBoxTakeMilitaryEquipment.TabStop = false;
+            this.groupBoxTakeMilitaryEquipment.Text = "Забрать технику";
             // 
             // maskedTextBoxPlace
             // 
@@ -88,15 +88,15 @@ namespace WindowsFormsTechnic
             this.labelPlace.TabIndex = 1;
             this.labelPlace.Text = "Место:";
             // 
-            // buttonTakeTechnic
+            // buttonTakeMilitaryEquipment
             // 
-            this.buttonTakeTechnic.Location = new System.Drawing.Point(24, 54);
-            this.buttonTakeTechnic.Name = "buttonTakeTechnic";
-            this.buttonTakeTechnic.Size = new System.Drawing.Size(75, 23);
-            this.buttonTakeTechnic.TabIndex = 0;
-            this.buttonTakeTechnic.Text = "Забрать";
-            this.buttonTakeTechnic.UseVisualStyleBackColor = true;
-            this.buttonTakeTechnic.Click += new System.EventHandler(this.buttonTakeTechnic_Click);
+            this.buttonTakeMilitaryEquipment.Location = new System.Drawing.Point(24, 54);
+            this.buttonTakeMilitaryEquipment.Name = "buttonTakeMilitaryEquipment";
+            this.buttonTakeMilitaryEquipment.Size = new System.Drawing.Size(75, 23);
+            this.buttonTakeMilitaryEquipment.TabIndex = 0;
+            this.buttonTakeMilitaryEquipment.Text = "Забрать";
+            this.buttonTakeMilitaryEquipment.UseVisualStyleBackColor = true;
+            this.buttonTakeMilitaryEquipment.Click += new System.EventHandler(this.buttonTakeMilitaryEquipment_Click);
             // 
             // pictureBoxBase
             // 
@@ -113,13 +113,13 @@ namespace WindowsFormsTechnic
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 461);
             this.Controls.Add(this.pictureBoxBase);
-            this.Controls.Add(this.groupBoxTakeTechnic);
-            this.Controls.Add(this.buttonSetArtillery);
+            this.Controls.Add(this.groupBoxTakeMilitaryEquipment);
+            this.Controls.Add(this.buttonSetSelfPropArtilleryInstal);
             this.Controls.Add(this.buttonSetArmoredCar);
             this.Name = "FormBase";
-            this.Text = "Техника";
-            this.groupBoxTakeTechnic.ResumeLayout(false);
-            this.groupBoxTakeTechnic.PerformLayout();
+            this.Text = "База";
+            this.groupBoxTakeMilitaryEquipment.ResumeLayout(false);
+            this.groupBoxTakeMilitaryEquipment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBase)).EndInit();
             this.ResumeLayout(false);
 
@@ -128,11 +128,11 @@ namespace WindowsFormsTechnic
         #endregion
 
         private System.Windows.Forms.Button buttonSetArmoredCar;
-        private System.Windows.Forms.Button buttonSetArtillery;
-        private System.Windows.Forms.GroupBox groupBoxTakeTechnic;
+        private System.Windows.Forms.Button buttonSetSelfPropArtilleryInstal;
+        private System.Windows.Forms.GroupBox groupBoxTakeMilitaryEquipment;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
         private System.Windows.Forms.Label labelPlace;
-        private System.Windows.Forms.Button buttonTakeTechnic;
+        private System.Windows.Forms.Button buttonTakeMilitaryEquipment;
         private System.Windows.Forms.PictureBox pictureBoxBase;
     }
 }

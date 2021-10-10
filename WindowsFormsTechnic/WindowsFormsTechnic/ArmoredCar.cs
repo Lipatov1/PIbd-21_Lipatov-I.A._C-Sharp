@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 
 namespace WindowsFormsTechnic {
-    public class ArmoredCar : Vehicle {
+    public class ArmoredCar : MilitaryEquipment {
         // Ширина и высота отрисовки бронированной машины
         protected readonly int armoredCarWidth = 210;
         protected readonly int armoredCarHeight = 85;
@@ -55,10 +55,8 @@ namespace WindowsFormsTechnic {
         // Отрисовка бронированной машины
         public override void DrawTransport(Graphics g) {
             Pen penBlack = new Pen(Color.Black, 3);
-            Brush brBlack = new SolidBrush(Color.Black);
             Brush brMain = new SolidBrush(MainColor);
             Brush brTower = new SolidBrush(ColorTranslator.FromHtml("#35391f"));
-            Brush brCamouflage = new SolidBrush(ColorTranslator.FromHtml("#595677"));
 
             // Отрисовываем колеса
             g.FillEllipse(brTower, startPosX, startPosY + 40, 45, 45);

@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsTechnic
 {
-    partial class FormTechnic
+    partial class FormMilitaryEquipment
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,24 +29,24 @@ namespace WindowsFormsTechnic
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxTechnic = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMilitaryEquipment = new System.Windows.Forms.PictureBox();
             this.buttonCreateArmoredCar = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
-            this.buttonCreateArtillery = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTechnic)).BeginInit();
+            this.buttonCreateSelfPropArtilleryInstal = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMilitaryEquipment)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBoxTechnic
+            // pictureBoxMilitaryEquipment
             // 
-            this.pictureBoxTechnic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxTechnic.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxTechnic.Name = "pictureBoxTechnic";
-            this.pictureBoxTechnic.Size = new System.Drawing.Size(884, 461);
-            this.pictureBoxTechnic.TabIndex = 0;
-            this.pictureBoxTechnic.TabStop = false;
+            this.pictureBoxMilitaryEquipment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxMilitaryEquipment.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxMilitaryEquipment.Name = "pictureBoxMilitaryEquipment";
+            this.pictureBoxMilitaryEquipment.Size = new System.Drawing.Size(884, 461);
+            this.pictureBoxMilitaryEquipment.TabIndex = 0;
+            this.pictureBoxMilitaryEquipment.TabStop = false;
             // 
             // buttonCreateArmoredCar
             // 
@@ -106,45 +106,45 @@ namespace WindowsFormsTechnic
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // buttonCreateArtillery
+            // buttonCreateSelfPropArtilleryInstal
             // 
-            this.buttonCreateArtillery.Location = new System.Drawing.Point(246, 12);
-            this.buttonCreateArtillery.Name = "buttonCreateArtillery";
-            this.buttonCreateArtillery.Size = new System.Drawing.Size(292, 23);
-            this.buttonCreateArtillery.TabIndex = 6;
-            this.buttonCreateArtillery.Text = "Создать cамоходную артиллерийскую установку";
-            this.buttonCreateArtillery.UseVisualStyleBackColor = true;
-            this.buttonCreateArtillery.Click += new System.EventHandler(this.buttonCreateArtillery_Click);
+            this.buttonCreateSelfPropArtilleryInstal.Location = new System.Drawing.Point(246, 12);
+            this.buttonCreateSelfPropArtilleryInstal.Name = "buttonCreateSelfPropArtilleryInstal";
+            this.buttonCreateSelfPropArtilleryInstal.Size = new System.Drawing.Size(292, 23);
+            this.buttonCreateSelfPropArtilleryInstal.TabIndex = 6;
+            this.buttonCreateSelfPropArtilleryInstal.Text = "Создать cамоходную артиллерийскую установку";
+            this.buttonCreateSelfPropArtilleryInstal.UseVisualStyleBackColor = true;
+            this.buttonCreateSelfPropArtilleryInstal.Click += new System.EventHandler(this.buttonCreateArtillery_Click);
             // 
-            // FormTechnic
+            // FormMilitaryEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.buttonCreateArtillery);
+            this.Controls.Add(this.buttonCreateSelfPropArtilleryInstal);
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonCreateArmoredCar);
-            this.Controls.Add(this.pictureBoxTechnic);
-            this.Name = "FormTechnic";
+            this.Controls.Add(this.pictureBoxMilitaryEquipment);
+            this.Name = "FormMilitaryEquipment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Техника";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTechnic)).EndInit();
+            this.Text = "Военная техника";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMilitaryEquipment)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBoxTechnic;
+        private System.Windows.Forms.PictureBox pictureBoxMilitaryEquipment;
         private System.Windows.Forms.Button buttonCreateArmoredCar;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonUp;
-        private System.Windows.Forms.Button buttonCreateArtillery;
+        private System.Windows.Forms.Button buttonCreateSelfPropArtilleryInstal;
     }
 }
 

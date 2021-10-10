@@ -4,20 +4,20 @@ using System.Windows.Forms;
 
 namespace WindowsFormsTechnic {
     public partial class FormBase : Form {
-        // Объект от класса-парковки
-        private readonly Base<ArmoredCar> baseTechnic;
+        // Объект от класса-базы
+        private readonly Base<ArmoredCar> baseMilitaryEquipment;
 
         public FormBase() {
             InitializeComponent();
-            baseTechnic = new Base<ArmoredCar>(pictureBoxBase.Width, pictureBoxBase.Height);
+            baseMilitaryEquipment = new Base<ArmoredCar>(pictureBoxBase.Width, pictureBoxBase.Height);
             Draw();
         }
 
-        // Метод отрисовки парковки
+        // Метод отрисовки базы
         private void Draw() {
             Bitmap bmp = new Bitmap(pictureBoxBase.Width, pictureBoxBase.Height);
             Graphics gr = Graphics.FromImage(bmp);
-            baseTechnic.Draw(gr);
+            baseMilitaryEquipment.Draw(gr);
             pictureBoxBase.Image = bmp;
         }
 
@@ -26,7 +26,7 @@ namespace WindowsFormsTechnic {
             ColorDialog dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK) {
                 var armoredCar = new ArmoredCar(100, 1000, dialog.Color);
-                if ((baseTechnic + armoredCar) != -1) {
+                if ((baseMilitaryEquipment + armoredCar) != -1) {
                     Draw();
                 } else {
                     MessageBox.Show("Парковка переполнена");
@@ -35,13 +35,13 @@ namespace WindowsFormsTechnic {
         }
 
         // Обработка нажатия кнопки "Припарковать cамоходную артиллерийскую установку"
-        private void buttonSetArtillery_Click(object sender, EventArgs e) {
+        private void buttonSetSelfPropArtilleryInstal_Click(object sender, EventArgs e) {
             ColorDialog dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK) {
                 ColorDialog dialogDop = new ColorDialog();
                 if (dialogDop.ShowDialog() == DialogResult.OK) {
-                    var artillery = new Artillery(100, 1000, dialog.Color, dialogDop.Color, true, true, true);
-                    if ((baseTechnic + artillery) != -1) {
+                    var artillery = new SelfPropArtilleryInstal(100, 1000, dialog.Color, dialogDop.Color, true, true, true);
+                    if ((baseMilitaryEquipment + artillery) != -1) {
                         Draw();
                     } else {
                         MessageBox.Show("Парковка переполнена");
@@ -51,11 +51,11 @@ namespace WindowsFormsTechnic {
         }
 
         // Обработка нажатия кнопки "Забрать"
-        private void buttonTakeTechnic_Click(object sender, EventArgs e) {
+        private void buttonTakeMilitaryEquipment_Click(object sender, EventArgs e) {
             if (maskedTextBoxPlace.Text != "") {
-                var technic = baseTechnic - Convert.ToInt32(maskedTextBoxPlace.Text);
+                var technic = baseMilitaryEquipment - Convert.ToInt32(maskedTextBoxPlace.Text);
                 if (technic != null) {
-                    FormTechnic form = new FormTechnic();
+                    FormMilitaryEquipment form = new FormMilitaryEquipment();
                     form.SetTransport(technic);
                     form.ShowDialog();
                 }
