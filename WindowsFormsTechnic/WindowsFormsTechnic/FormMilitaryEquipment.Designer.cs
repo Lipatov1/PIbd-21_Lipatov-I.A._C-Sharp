@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsTechnic
 {
-    partial class FormTechnic
+    partial class FormMilitaryEquipment
     {
         /// <summary>
         ///  Required designer variable.
@@ -116,7 +116,7 @@ namespace WindowsFormsTechnic
             this.buttonCreateSelfPropArtilleryInstal.UseVisualStyleBackColor = true;
             this.buttonCreateSelfPropArtilleryInstal.Click += new System.EventHandler(this.buttonCreateSelfPropArtilleryInstal_Click);
             // 
-            // FormTechnic
+            // FormMilitaryEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,9 +128,9 @@ namespace WindowsFormsTechnic
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonCreateArmoredCar);
             this.Controls.Add(this.pictureBoxTechnic);
-            this.Name = "FormTechnic";
+            this.Name = "FormMilitaryEquipment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Техника";
+            this.Text = "Военная техника";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTechnic)).EndInit();
             this.ResumeLayout(false);
 

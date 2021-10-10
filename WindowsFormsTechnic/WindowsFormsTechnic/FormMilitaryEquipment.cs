@@ -3,11 +3,11 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace WindowsFormsTechnic {
-	public partial class FormTechnic : Form {
-		private ITransport technic;
+	public partial class FormMilitaryEquipment : Form {
+		private ITransport militaryEquipment;
 
 		// Конструктор		
-		public FormTechnic() {
+		public FormMilitaryEquipment() {
 			InitializeComponent();
 		}
 
@@ -15,23 +15,23 @@ namespace WindowsFormsTechnic {
 		private void Draw() {
 			Bitmap bmp = new Bitmap(pictureBoxTechnic.Width, pictureBoxTechnic.Height);
 			Graphics gr = Graphics.FromImage(bmp);
-			technic.DrawTransport(gr);
+			militaryEquipment.DrawTransport(gr);
 			pictureBoxTechnic.Image = bmp;
 		}
 
 		// Обработка нажатия кнопки "Создать бронированный автомобиль"
 		private void buttonCreateArmoredCar_Click(object sender, EventArgs e) {
 			Random rnd = new Random();
-			technic = new ArmoredCar(rnd.Next(100, 300), rnd.Next(1000, 2000), ColorTranslator.FromHtml("#35391f"));
-			technic.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxTechnic.Width, pictureBoxTechnic.Height);
+			militaryEquipment = new ArmoredCar(rnd.Next(100, 300), rnd.Next(1000, 2000), ColorTranslator.FromHtml("#35391f"));
+			militaryEquipment.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxTechnic.Width, pictureBoxTechnic.Height);
 			Draw();
 		}
 
 		// Обработка нажатия кнопки "Создать cамоходную артиллерийскую установку"
 		private void buttonCreateSelfPropArtilleryInstal_Click(object sender, EventArgs e) {
 			Random rnd = new Random();
-			technic = new SelfPropArtilleryInstal(rnd.Next(100, 300), rnd.Next(1000, 2000), ColorTranslator.FromHtml("#35391f"), Color.Red, true, true, true);
-			technic.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxTechnic.Width, pictureBoxTechnic.Height);
+			militaryEquipment = new SelfPropArtilleryInstal(rnd.Next(100, 300), rnd.Next(1000, 2000), ColorTranslator.FromHtml("#35391f"), Color.Red, true, true, true);
+			militaryEquipment.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxTechnic.Width, pictureBoxTechnic.Height);
 			Draw();
 		}
 
@@ -40,16 +40,16 @@ namespace WindowsFormsTechnic {
 			string name = (sender as Button).Name;
 			switch (name) {
 				case "buttonUp":
-					technic.MoveTransport(Direction.Up);
+					militaryEquipment.MoveTransport(Direction.Up);
 					break;
 				case "buttonDown":
-					technic.MoveTransport(Direction.Down);
+					militaryEquipment.MoveTransport(Direction.Down);
 					break;
 				case "buttonLeft":
-					technic.MoveTransport(Direction.Left);
+					militaryEquipment.MoveTransport(Direction.Left);
 					break;
 				case "buttonRight":
-					technic.MoveTransport(Direction.Right);
+					militaryEquipment.MoveTransport(Direction.Right);
 					break;
 			}
 			Draw();

@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 
 namespace WindowsFormsTechnic {
-    public class ArmoredCar : Vehicle {
+    public class ArmoredCar : MilitaryEquipment {
         // Ширина и высота отрисовки бронированной машины
         protected readonly int armoredCarWidth = 210;
         protected readonly int armoredCarHeight = 85;
