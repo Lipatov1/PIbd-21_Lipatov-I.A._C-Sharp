@@ -24,7 +24,7 @@ namespace WindowsFormsTechnic {
 		// Основной цвет cамоходной артиллерийской установки
 		public Color MainColor { private set; get; }
 
-		// Дооплнительный цвет cамоходной артиллерийской установки
+		// Дополнительный цвет cамоходной артиллерийской установки
 		public Color DopColor { private set; get; }
 
 		// Признак наличия камуфляжа
