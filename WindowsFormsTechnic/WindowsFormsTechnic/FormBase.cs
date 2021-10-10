@@ -5,11 +5,11 @@ using System.Windows.Forms;
 namespace WindowsFormsTechnic {
     public partial class FormBase : Form {
         // Объект от класса-базы
-        private readonly Base<ArmoredCar> baseMilitaryEquipment;
+        private readonly Base<MilitaryEquipment> baseMilitaryEquipment;
 
         public FormBase() {
             InitializeComponent();
-            baseMilitaryEquipment = new Base<ArmoredCar>(pictureBoxBase.Width, pictureBoxBase.Height);
+            baseMilitaryEquipment = new Base<MilitaryEquipment>(pictureBoxBase.Width, pictureBoxBase.Height);
             Draw();
         }
 
