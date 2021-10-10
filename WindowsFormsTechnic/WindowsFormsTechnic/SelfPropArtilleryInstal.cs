@@ -1,9 +1,8 @@
 ﻿using System.Drawing;
 
 namespace WindowsFormsTechnic {
-	// Класс отрисовки cамоходной артиллерийской установки
-	public class Artillery : ArmoredCar {
-		// Дооплнительный цвет cамоходной артиллерийской установки
+	public class SelfPropArtilleryInstal : ArmoredCar {
+		// Дополнительный цвет cамоходной артиллерийской установки
 		public Color DopColor { private set; get; }
 
 		// Признак наличия камуфляжа
@@ -16,7 +15,7 @@ namespace WindowsFormsTechnic {
 		public bool Сaterpillar { private set; get; }
 
 		// Конструктор
-		public Artillery(int maxSpeed, float weight, Color mainColor, Color dopColor, bool camouflage, bool star, bool caterpillar) :
+		public SelfPropArtilleryInstal(int maxSpeed, float weight, Color mainColor, Color dopColor, bool camouflage, bool star, bool caterpillar) :
 		base(maxSpeed, weight, mainColor, 210, 85) {
 			DopColor = dopColor;
 			Camouflage = camouflage;

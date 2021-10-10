@@ -35,7 +35,7 @@ namespace WindowsFormsTechnic
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
-            this.buttonCreateArtillery = new System.Windows.Forms.Button();
+            this.buttonCreateSelfPropArtilleryInstal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTechnic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,22 +106,22 @@ namespace WindowsFormsTechnic
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // buttonCreateArtillery
+            // buttonCreateSelfPropArtilleryInstal
             // 
-            this.buttonCreateArtillery.Location = new System.Drawing.Point(246, 12);
-            this.buttonCreateArtillery.Name = "buttonCreateArtillery";
-            this.buttonCreateArtillery.Size = new System.Drawing.Size(292, 23);
-            this.buttonCreateArtillery.TabIndex = 6;
-            this.buttonCreateArtillery.Text = "Создать cамоходную артиллерийскую установку";
-            this.buttonCreateArtillery.UseVisualStyleBackColor = true;
-            this.buttonCreateArtillery.Click += new System.EventHandler(this.buttonCreateArtillery_Click);
+            this.buttonCreateSelfPropArtilleryInstal.Location = new System.Drawing.Point(246, 12);
+            this.buttonCreateSelfPropArtilleryInstal.Name = "buttonCreateSelfPropArtilleryInstal";
+            this.buttonCreateSelfPropArtilleryInstal.Size = new System.Drawing.Size(292, 23);
+            this.buttonCreateSelfPropArtilleryInstal.TabIndex = 6;
+            this.buttonCreateSelfPropArtilleryInstal.Text = "Создать cамоходную артиллерийскую установку";
+            this.buttonCreateSelfPropArtilleryInstal.UseVisualStyleBackColor = true;
+            this.buttonCreateSelfPropArtilleryInstal.Click += new System.EventHandler(this.buttonCreateSelfPropArtilleryInstal_Click);
             // 
             // FormTechnic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.buttonCreateArtillery);
+            this.Controls.Add(this.buttonCreateSelfPropArtilleryInstal);
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonDown);
@@ -144,7 +144,7 @@ namespace WindowsFormsTechnic
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonUp;
-        private System.Windows.Forms.Button buttonCreateArtillery;
+        private System.Windows.Forms.Button buttonCreateSelfPropArtilleryInstal;
     }
 }
 

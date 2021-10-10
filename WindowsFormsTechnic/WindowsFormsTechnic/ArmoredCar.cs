@@ -55,10 +55,8 @@ namespace WindowsFormsTechnic {
         // Отрисовка бронированной машины
         public override void DrawTransport(Graphics g) {
             Pen penBlack = new Pen(Color.Black, 3);
-            Brush brBlack = new SolidBrush(Color.Black);
             Brush brMain = new SolidBrush(MainColor);
             Brush brTower = new SolidBrush(ColorTranslator.FromHtml("#424724"));
-            Brush brCamouflage = new SolidBrush(ColorTranslator.FromHtml("#595677"));
 
             // Отрисовываем колеса
             g.FillEllipse(brMain, startPosX, startPosY + 40, 45, 45);
