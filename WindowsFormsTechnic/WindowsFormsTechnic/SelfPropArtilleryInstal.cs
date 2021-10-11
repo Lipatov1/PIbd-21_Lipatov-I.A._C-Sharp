@@ -1,29 +1,7 @@
 ﻿using System.Drawing;
 
 namespace WindowsFormsTechnic {
-	// Класс отрисовки cамоходной артиллерийской установки
-	class SelfPropArtilleryInstal {
-		// Левая и правая координаты отрисовки cамоходной артиллерийской установки
-		private float startPosX;
-		private float startPosY;
-
-		// Ширина и высота окна отрисовки
-		private int pictureWidth;
-		private int pictureHeight;
-
-		// Ширина и высота отрисовки cамоходной артиллерийской установки
-		private readonly int SelfPropArtilleryInstalWidth = 210;
-		private readonly int SelfPropArtilleryInstalHeight = 85;
-
-		// Максимальная скорость cамоходной артиллерийской установки
-		public int MaxSpeed { private set; get; }
-
-		// Вес cамоходной артиллерийской установки
-		public float Weight { private set; get; }
-
-		// Основной цвет cамоходной артиллерийской установки
-		public Color MainColor { private set; get; }
-
+	public class SelfPropArtilleryInstal : ArmoredCar {
 		// Дополнительный цвет cамоходной артиллерийской установки
 		public Color DopColor { private set; get; }
 
@@ -33,56 +11,20 @@ namespace WindowsFormsTechnic {
 		// Признак наличия звезды
 		public bool Star { private set; get; }
 
-		// Инициализация свойств
-		public void Init(int maxSpeed, float weight, Color mainColor, Color dopColor, bool сamouflage, bool star) {
-			MaxSpeed = maxSpeed;
-			Weight = weight;
-			MainColor = mainColor;
+		// Признак наличия гусеницы
+		public bool Сaterpillar { private set; get; }
+
+		// Конструктор
+		public SelfPropArtilleryInstal(int maxSpeed, float weight, Color mainColor, Color dopColor, bool camouflage, bool star, bool caterpillar) :
+		base(maxSpeed, weight, mainColor, 210, 85) {
 			DopColor = dopColor;
-			Camouflage = сamouflage;
+			Camouflage = camouflage;
 			Star = star;
-		}
-
-		// Установка позиции cамоходной артиллерийской установки
-		public void SetPosition(int x, int y, int width, int height) {
-			startPosX = x;
-			startPosY = y;
-			pictureWidth = width;
-			pictureHeight = height;
-		}
-
-		// Изменение направления пермещения
-		public void MoveTransport(Direction direction) {
-			float step = MaxSpeed * 100 / Weight;
-			switch (direction) {
-				case Direction.Right:
-					if (startPosX + step < pictureWidth - SelfPropArtilleryInstalWidth) {
-						startPosX += step;
-					}
-					break;
-
-				case Direction.Left:
-					if (startPosX - step > 0) {
-						startPosX -= step;
-					}
-					break;
-
-				case Direction.Up:
-					if (startPosY - step > 0) {
-						startPosY -= step;
-					}
-					break;
-
-				case Direction.Down:
-					if (startPosY + step < pictureHeight - SelfPropArtilleryInstalHeight) {
-						startPosY += step;
-					}
-					break;
-			}
+			Сaterpillar = caterpillar;
 		}
 
 		// Отрисовка cамоходной артиллерийской установки
-		public void DrawTransport(Graphics g) {
+		public override void DrawTransport(Graphics g) {
 			Pen penBlack = new Pen(Color.Black, 3);
 			Brush brBlack = new SolidBrush(Color.Black);
 			Brush brMain = new SolidBrush(MainColor);
@@ -90,12 +32,10 @@ namespace WindowsFormsTechnic {
 			Brush brDarkOlive = new SolidBrush(ColorTranslator.FromHtml("#35391f"));
 			Brush brSteelBlue = new SolidBrush(ColorTranslator.FromHtml("#595677"));
 
-			// Отрисовываем гусеницу
-			g.FillEllipse(brDarkOlive, startPosX, startPosY + 40, 50, 45);
-			g.FillEllipse(brDarkOlive, startPosX + 160, startPosY + 40, 50, 45);
-			g.FillRectangle(brDarkOlive, startPosX + 25, startPosY + 40, 160, 45);
+			base.DrawTransport(g);
 
-			// Отрисовывем колеса гусеницы
+			// Отрисовываем гусеницу
+			g.FillRectangle(brDarkOlive, startPosX + 25, startPosY + 50, 160, 35);
 			g.DrawEllipse(penBlack, startPosX + 5, startPosY + 45, 35, 35);
 			g.DrawEllipse(penBlack, startPosX + 170, startPosY + 45, 35, 35);
 			g.DrawEllipse(penBlack, startPosX + 50, startPosY + 62, 20, 20);
@@ -105,10 +45,7 @@ namespace WindowsFormsTechnic {
 			g.FillEllipse(brBlack, startPosX + 70, startPosY + 45, 10, 10);
 			g.FillEllipse(brBlack, startPosX + 100, startPosY + 45, 10, 10);
 			g.FillEllipse(brBlack, startPosX + 130, startPosY + 45, 10, 10);
-
-			// Отрисовываем башню
 			g.FillRectangle(brMain, startPosX + 7, startPosY + 30, 198, 20);
-			g.FillRectangle(brMain, startPosX + 60, startPosY, 90, 30);
 
 			// Отрисовываем камуфляж
 			if (Camouflage) {
