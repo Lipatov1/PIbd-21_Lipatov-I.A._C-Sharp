@@ -87,13 +87,13 @@ namespace WindowsFormsTechnic {
 			Brush brBlack = new SolidBrush(Color.Black);
 			Brush brMain = new SolidBrush(MainColor);
 			Brush brDopColor = new SolidBrush(DopColor);
-			Brush brTower = new SolidBrush(ColorTranslator.FromHtml("#424724"));
-			Brush brCamouflage = new SolidBrush(ColorTranslator.FromHtml("#595677"));
+			Brush brDarkOlive = new SolidBrush(ColorTranslator.FromHtml("#35391f"));
+			Brush brSteelBlue = new SolidBrush(ColorTranslator.FromHtml("#595677"));
 
 			// Отрисовываем гусеницу
-			g.FillEllipse(brMain, startPosX, startPosY + 40, 50, 45);
-			g.FillEllipse(brMain, startPosX + 160, startPosY + 40, 50, 45);
-			g.FillRectangle(brMain, startPosX + 25, startPosY + 40, 160, 45);
+			g.FillEllipse(brDarkOlive, startPosX, startPosY + 40, 50, 45);
+			g.FillEllipse(brDarkOlive, startPosX + 160, startPosY + 40, 50, 45);
+			g.FillRectangle(brDarkOlive, startPosX + 25, startPosY + 40, 160, 45);
 
 			// Отрисовывем колеса гусеницы
 			g.DrawEllipse(penBlack, startPosX + 5, startPosY + 45, 35, 35);
@@ -107,18 +107,18 @@ namespace WindowsFormsTechnic {
 			g.FillEllipse(brBlack, startPosX + 130, startPosY + 45, 10, 10);
 
 			// Отрисовываем башню
-			g.FillRectangle(brTower, startPosX + 7, startPosY + 30, 198, 20);
-			g.FillRectangle(brTower, startPosX + 60, startPosY, 90, 30);
+			g.FillRectangle(brMain, startPosX + 7, startPosY + 30, 198, 20);
+			g.FillRectangle(brMain, startPosX + 60, startPosY, 90, 30);
 
 			// Отрисовываем камуфляж
 			if (Camouflage) {
-				g.FillEllipse(brCamouflage, startPosX + 12, startPosY + 34, 25, 12);
-				g.FillEllipse(brCamouflage, startPosX + 70, startPosY + 32, 12, 12);
-				g.FillEllipse(brCamouflage, startPosX + 70, startPosY + 8, 10, 10);
-				g.FillEllipse(brCamouflage, startPosX + 70, startPosY + 3, 15, 10);
-				g.FillEllipse(brCamouflage, startPosX + 130, startPosY + 3, 15, 15);
-				g.FillEllipse(brCamouflage, startPosX + 130, startPosY + 33, 20, 13);
-				g.FillEllipse(brCamouflage, startPosX + 180, startPosY + 33, 13, 13);
+				g.FillEllipse(brSteelBlue, startPosX + 12, startPosY + 34, 25, 12);
+				g.FillEllipse(brSteelBlue, startPosX + 70, startPosY + 32, 12, 12);
+				g.FillEllipse(brSteelBlue, startPosX + 70, startPosY + 8, 10, 10);
+				g.FillEllipse(brSteelBlue, startPosX + 70, startPosY + 3, 15, 10);
+				g.FillEllipse(brSteelBlue, startPosX + 130, startPosY + 3, 15, 15);
+				g.FillEllipse(brSteelBlue, startPosX + 130, startPosY + 33, 20, 13);
+				g.FillEllipse(brSteelBlue, startPosX + 180, startPosY + 33, 13, 13);
 			}
 
 			// Отрисовываем звезду

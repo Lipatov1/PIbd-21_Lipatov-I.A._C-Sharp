@@ -23,7 +23,7 @@ namespace WindowsFormsTechnic {
 		private void buttonCreate_Click(object sender, EventArgs e) {
 			Random rnd = new Random();
 			SelfPropArtillery = new SelfPropArtilleryInstal();
-			SelfPropArtillery.Init(rnd.Next(100, 300), rnd.Next(1000, 2000), ColorTranslator.FromHtml("#35391f"), Color.Red, true, true); SelfPropArtillery.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxSelfPropArtilleryInstal.Width, pictureBoxSelfPropArtilleryInstal.Height);
+			SelfPropArtillery.Init(rnd.Next(100, 300), rnd.Next(1000, 2000), ColorTranslator.FromHtml("#424724"), Color.Red, true, true); SelfPropArtillery.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxSelfPropArtilleryInstal.Width, pictureBoxSelfPropArtilleryInstal.Height);
 			Draw();
 		}
 
