@@ -8,7 +8,7 @@ namespace WindowsFormsTechnic {
 		static void Main() {
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new FormSelfPropArtilleryInstal());
+			Application.Run(new FormMilitaryEquipment());
 		}
 	}
 }
