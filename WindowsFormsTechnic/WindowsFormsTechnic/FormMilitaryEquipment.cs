@@ -11,11 +11,17 @@ namespace WindowsFormsTechnic {
 			InitializeComponent();
 		}
 
-		// Метод отрисовки техники
+		// Передача военной техники на форму
+		public void SetTransport(ITransport militaryEquipment) {
+			this.militaryEquipment = militaryEquipment;
+			Draw();
+		}
+
+		// Метод отрисовки военной техники
 		private void Draw() {
 			Bitmap bmp = new Bitmap(pictureBoxMilitaryEquipment.Width, pictureBoxMilitaryEquipment.Height);
 			Graphics gr = Graphics.FromImage(bmp);
-			militaryEquipment.DrawTransport(gr);
+			militaryEquipment?.DrawTransport(gr);
 			pictureBoxMilitaryEquipment.Image = bmp;
 		}
 
@@ -40,16 +46,16 @@ namespace WindowsFormsTechnic {
 			string name = (sender as Button).Name;
 			switch (name) {
 				case "buttonUp":
-					militaryEquipment.MoveTransport(Direction.Up);
+					militaryEquipment?.MoveTransport(Direction.Up);
 					break;
 				case "buttonDown":
-					militaryEquipment.MoveTransport(Direction.Down);
+					militaryEquipment?.MoveTransport(Direction.Down);
 					break;
 				case "buttonLeft":
-					militaryEquipment.MoveTransport(Direction.Left);
+					militaryEquipment?.MoveTransport(Direction.Left);
 					break;
 				case "buttonRight":
-					militaryEquipment.MoveTransport(Direction.Right);
+					militaryEquipment?.MoveTransport(Direction.Right);
 					break;
 			}
 			Draw();

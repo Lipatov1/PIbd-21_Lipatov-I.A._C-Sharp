@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 
 namespace WindowsFormsTechnic {
+	// Класс отрисовки cамоходной артиллерийской установки
 	public class SelfPropArtilleryInstal : ArmoredCar {
 		// Дополнительный цвет cамоходной артиллерийской установки
 		public Color DopColor { private set; get; }

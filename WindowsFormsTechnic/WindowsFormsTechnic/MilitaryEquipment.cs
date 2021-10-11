@@ -19,7 +19,7 @@ namespace WindowsFormsTechnic {
         // Основной цвет военной техники
         public Color MainColor { protected set; get; }
 
-        // Установка позиции военной техники
+        // Установка позиции техники
         public void SetPosition(int x, int y, int width, int height) {
             startPosX = x;
             startPosY = y;
