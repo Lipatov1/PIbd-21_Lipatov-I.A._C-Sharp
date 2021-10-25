@@ -16,12 +16,9 @@ namespace WindowsFormsTechnic {
         private void ReloadLevels() {
             int index = listBoxBases.SelectedIndex;
             listBoxBases.Items.Clear();
-
-            /*for (int i = 0; i < baseCollection.Keys.Count; i++) {
+            
+            for (int i = 0; i < baseCollection.Keys.Count; i++) {
                 listBoxBases.Items.Add(baseCollection.Keys[i]);
-            }*/
-            foreach (var key in baseCollection.Keys) {
-                listBoxBases.Items.Add(key);
             }
 
             if (listBoxBases.Items.Count > 0 && (index == -1 || index >= listBoxBases.Items.Count)) {
@@ -33,7 +30,6 @@ namespace WindowsFormsTechnic {
 
         // Метод отрисовки базы
         private void Draw() {
-            //если выбран один из пуктов в listBox (при старте программы ни один пункт не будет выбран и может возникнуть ошибка, если мы попытаемся обратиться к элементу listBox)
             Bitmap bmp = new Bitmap(pictureBoxBase.Width, pictureBoxBase.Height);
             Graphics gr = Graphics.FromImage(bmp);
             if (listBoxBases.SelectedIndex > -1) {
@@ -46,7 +42,7 @@ namespace WindowsFormsTechnic {
         // Обработка нажатия кнопки "Добавить базу"
         private void buttonAddBase_Click(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(textBoxNewLevelName.Text)) {
-                MessageBox.Show("Введите название парковки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Введите название базы", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             baseCollection.AddBase(textBoxNewLevelName.Text);
@@ -56,7 +52,7 @@ namespace WindowsFormsTechnic {
         // Обработка нажатия кнопки "Удалить базу"
         private void buttonDelBase_Click(object sender, EventArgs e) {
             if (listBoxBases.SelectedIndex > -1) {
-                if (MessageBox.Show($"Удалить парковку {listBoxBases.SelectedItem.ToString()}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                if (MessageBox.Show($"Удалить базу {listBoxBases.SelectedItem.ToString()}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
                     baseCollection.DelBase(listBoxBases.SelectedItem.ToString());
                     ReloadLevels();
                 }
