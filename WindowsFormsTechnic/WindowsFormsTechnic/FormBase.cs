@@ -25,7 +25,7 @@ namespace WindowsFormsTechnic {
         private void buttonSetArmoredCar_Click(object sender, EventArgs e) {
             ColorDialog dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK) {
-                var armoredCar = new ArmoredCar(100, 1000, dialog.Color);
+                var armoredCar = new ArmoredCar(100, 100, dialog.Color);
                 if ((baseMilitaryEquipment + armoredCar) != -1) {
                     Draw();
                 } else {
