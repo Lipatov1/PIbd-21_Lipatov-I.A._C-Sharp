@@ -1,10 +1,14 @@
 ﻿using System.Drawing;
+using System.Collections.Generic;
 
 namespace WindowsFormsTechnic {
     // Параметризованный класс для хранения набора объектов от интерфейса ITransport
     public class Base<T> where T : class, ITransport {
-        // Массив объектов, которые храним
-        private readonly T[] places;
+        // Список объектов, которые храним
+        private readonly List<T> places;
+
+        // Максимальное количество мест на базе
+        private readonly int maxCount;
 
         // Ширина и высота окна отрисовки
         private readonly int pictureWidth;
@@ -14,35 +18,31 @@ namespace WindowsFormsTechnic {
         private readonly int widthParkingPlace = 460;
         private readonly int heightParkingPlace = 105;
 
+        // Конструктор
         public Base(int picWidth, int picHeight) {
             int width = picWidth / widthParkingPlace;
             int height = picHeight / heightParkingPlace;
-            places = new T[width * height];
+            maxCount = width * height;
             pictureWidth = picWidth;
             pictureHeight = picHeight;
+            places = new List<T>();
         }
 
         // Перегрузка оператора сложения
-        public static int operator +(Base<T> basePark, T technic) {
-            int rowsNumber = basePark.pictureHeight / basePark.heightParkingPlace;
-            int columnNumber = basePark.pictureWidth / basePark.widthParkingPlace;
-            for (int i = 0; i < basePark.places.Length; i++) {
-                if (basePark.places[i] == null) {
-                    technic.SetPosition(10 + basePark.widthParkingPlace * (i % columnNumber), 10 + basePark.heightParkingPlace * (i / columnNumber), 884, 461);
-                    basePark.places[i] = technic;
-                    return i;
-                }
+        public static int operator +(Base<T> basePark, T militaryEquipment) {
+            if (basePark.places.Count < basePark.maxCount) {
+                basePark.places.Add(militaryEquipment);
+                return 1;
             }
             return -1;
         }
 
         // Перегрузка оператора вычитания
         public static T operator -(Base<T> basePark, int index) {
-            if (index >= 0 && index < basePark.places.Length && basePark.places[index] != null) {
-                T technic = basePark.places[index];
-                technic.SetPosition(50, 50, 884, 461);
-                basePark.places[index] = null;
-                return technic;
+            if (index >= 0 && index < basePark.places.Count) {
+                T militaryEquipment = basePark.places[index];
+                basePark.places.RemoveAt(index);
+                return militaryEquipment;
             }
             return null;
         }
@@ -50,8 +50,10 @@ namespace WindowsFormsTechnic {
         // Метод отрисовки базы
         public void Draw(Graphics g) {
             DrawMarking(g);
-            for (int i = 0; i < places.Length; i++) {
-                places[i]?.DrawTransport(g);
+            for (int i = 0; i < places.Count; ++i) {
+                int columnNumber = pictureWidth / widthParkingPlace;
+                places[i].SetPosition(10 + widthParkingPlace * (i % columnNumber), 10 + heightParkingPlace * (i / columnNumber), 884, 461);
+                places[i].DrawTransport(g);
             }
         }
 

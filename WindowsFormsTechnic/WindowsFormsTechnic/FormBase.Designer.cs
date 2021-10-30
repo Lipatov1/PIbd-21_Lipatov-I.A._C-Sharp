@@ -36,13 +36,18 @@ namespace WindowsFormsTechnic
             this.labelPlace = new System.Windows.Forms.Label();
             this.buttonTakeMilitaryEquipment = new System.Windows.Forms.Button();
             this.pictureBoxBase = new System.Windows.Forms.PictureBox();
+            this.labelBases = new System.Windows.Forms.Label();
+            this.textBoxNewLevelName = new System.Windows.Forms.TextBox();
+            this.buttonAddBase = new System.Windows.Forms.Button();
+            this.listBoxBases = new System.Windows.Forms.ListBox();
+            this.buttonRemoveBase = new System.Windows.Forms.Button();
             this.groupBoxTakeMilitaryEquipment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBase)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSetArmoredCar
             // 
-            this.buttonSetArmoredCar.Location = new System.Drawing.Point(931, 12);
+            this.buttonSetArmoredCar.Location = new System.Drawing.Point(934, 217);
             this.buttonSetArmoredCar.Name = "buttonSetArmoredCar";
             this.buttonSetArmoredCar.Size = new System.Drawing.Size(121, 60);
             this.buttonSetArmoredCar.TabIndex = 0;
@@ -52,7 +57,7 @@ namespace WindowsFormsTechnic
             // 
             // buttonSetSelfPropArtilleryInstal
             // 
-            this.buttonSetSelfPropArtilleryInstal.Location = new System.Drawing.Point(931, 78);
+            this.buttonSetSelfPropArtilleryInstal.Location = new System.Drawing.Point(934, 283);
             this.buttonSetSelfPropArtilleryInstal.Name = "buttonSetSelfPropArtilleryInstal";
             this.buttonSetSelfPropArtilleryInstal.Size = new System.Drawing.Size(121, 73);
             this.buttonSetSelfPropArtilleryInstal.TabIndex = 1;
@@ -65,7 +70,7 @@ namespace WindowsFormsTechnic
             this.groupBoxTakeMilitaryEquipment.Controls.Add(this.maskedTextBoxPlace);
             this.groupBoxTakeMilitaryEquipment.Controls.Add(this.labelPlace);
             this.groupBoxTakeMilitaryEquipment.Controls.Add(this.buttonTakeMilitaryEquipment);
-            this.groupBoxTakeMilitaryEquipment.Location = new System.Drawing.Point(931, 157);
+            this.groupBoxTakeMilitaryEquipment.Location = new System.Drawing.Point(934, 362);
             this.groupBoxTakeMilitaryEquipment.Name = "groupBoxTakeMilitaryEquipment";
             this.groupBoxTakeMilitaryEquipment.Size = new System.Drawing.Size(121, 87);
             this.groupBoxTakeMilitaryEquipment.TabIndex = 2;
@@ -107,11 +112,63 @@ namespace WindowsFormsTechnic
             this.pictureBoxBase.TabIndex = 3;
             this.pictureBoxBase.TabStop = false;
             // 
+            // labelBases
+            // 
+            this.labelBases.AutoSize = true;
+            this.labelBases.Location = new System.Drawing.Point(978, 9);
+            this.labelBases.Name = "labelBases";
+            this.labelBases.Size = new System.Drawing.Size(37, 15);
+            this.labelBases.TabIndex = 4;
+            this.labelBases.Text = "Базы:";
+            // 
+            // textBoxNewLevelName
+            // 
+            this.textBoxNewLevelName.Location = new System.Drawing.Point(934, 27);
+            this.textBoxNewLevelName.Name = "textBoxNewLevelName";
+            this.textBoxNewLevelName.Size = new System.Drawing.Size(121, 23);
+            this.textBoxNewLevelName.TabIndex = 5;
+            // 
+            // buttonAddBase
+            // 
+            this.buttonAddBase.Location = new System.Drawing.Point(934, 56);
+            this.buttonAddBase.Name = "buttonAddBase";
+            this.buttonAddBase.Size = new System.Drawing.Size(121, 23);
+            this.buttonAddBase.TabIndex = 6;
+            this.buttonAddBase.Text = "Добавить базу";
+            this.buttonAddBase.UseVisualStyleBackColor = true;
+            this.buttonAddBase.Click += new System.EventHandler(this.buttonAddBase_Click);
+            // 
+            // listBoxBases
+            // 
+            this.listBoxBases.FormattingEnabled = true;
+            this.listBoxBases.ItemHeight = 15;
+            this.listBoxBases.Location = new System.Drawing.Point(934, 85);
+            this.listBoxBases.Name = "listBoxBases";
+            this.listBoxBases.Size = new System.Drawing.Size(121, 94);
+            this.listBoxBases.TabIndex = 7;
+            this.listBoxBases.SelectedIndexChanged += new System.EventHandler(this.listBoxBases_SelectedIndexChanged);
+            // 
+            // buttonRemoveBase
+            // 
+            this.buttonRemoveBase.Location = new System.Drawing.Point(934, 185);
+            this.buttonRemoveBase.Name = "buttonRemoveBase";
+            this.buttonRemoveBase.Size = new System.Drawing.Size(121, 23);
+            this.buttonRemoveBase.TabIndex = 8;
+            this.buttonRemoveBase.Text = "Удалить базу";
+            this.buttonRemoveBase.UseVisualStyleBackColor = true;
+            this.buttonRemoveBase.AutoSizeChanged += new System.EventHandler(this.buttonDelBase_Click);
+            this.buttonRemoveBase.Click += new System.EventHandler(this.buttonDelBase_Click);
+            // 
             // FormBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 461);
+            this.Controls.Add(this.buttonRemoveBase);
+            this.Controls.Add(this.listBoxBases);
+            this.Controls.Add(this.buttonAddBase);
+            this.Controls.Add(this.textBoxNewLevelName);
+            this.Controls.Add(this.labelBases);
             this.Controls.Add(this.pictureBoxBase);
             this.Controls.Add(this.groupBoxTakeMilitaryEquipment);
             this.Controls.Add(this.buttonSetSelfPropArtilleryInstal);
@@ -122,6 +179,7 @@ namespace WindowsFormsTechnic
             this.groupBoxTakeMilitaryEquipment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBase)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -134,5 +192,10 @@ namespace WindowsFormsTechnic
         private System.Windows.Forms.Label labelPlace;
         private System.Windows.Forms.Button buttonTakeMilitaryEquipment;
         private System.Windows.Forms.PictureBox pictureBoxBase;
+        private System.Windows.Forms.Label labelBases;
+        private System.Windows.Forms.TextBox textBoxNewLevelName;
+        private System.Windows.Forms.Button buttonAddBase;
+        private System.Windows.Forms.ListBox listBoxBases;
+        private System.Windows.Forms.Button buttonRemoveBase;
     }
 }
