@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
+using System.Collections.Generic;
 
 namespace WindowsFormsTechnic {
     // Параметризованный класс для хранения набора объектов от интерфейса ITransport
@@ -20,9 +20,9 @@ namespace WindowsFormsTechnic {
 
         // Конструктор
         public Base(int picWidth, int picHeight) {
-            int columnsNumber = picWidth / widthParkingPlace;
-            int rowsNumber = picHeight / heightParkingPlace;
-            maxCount = columnsNumber * rowsNumber;
+            int width = picWidth / widthParkingPlace;
+            int height = picHeight / heightParkingPlace;
+            maxCount = width * height;
             pictureWidth = picWidth;
             pictureHeight = picHeight;
             places = new List<T>();
