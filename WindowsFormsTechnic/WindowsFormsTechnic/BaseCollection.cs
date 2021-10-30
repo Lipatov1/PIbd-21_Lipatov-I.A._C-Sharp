@@ -2,7 +2,7 @@
 using System.Linq;
 
 namespace WindowsFormsTechnic {
-    // Класс-коллекция парковок
+    // Класс-коллекция баз
     public class BaseCollection {
         // Словарь (хранилище) с базами
         readonly Dictionary<string, Base<Vehicle>> baseStages;

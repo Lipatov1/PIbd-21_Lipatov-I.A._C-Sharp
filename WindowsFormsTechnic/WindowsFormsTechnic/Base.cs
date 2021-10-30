@@ -7,7 +7,7 @@ namespace WindowsFormsTechnic {
         // Список объектов, которые храним
         private readonly List<T> places;
 
-        // Максимальное количество мест на парковке
+        // Максимальное количество мест на базе
         private readonly int maxCount;
 
         // Ширина и высота окна отрисовки
