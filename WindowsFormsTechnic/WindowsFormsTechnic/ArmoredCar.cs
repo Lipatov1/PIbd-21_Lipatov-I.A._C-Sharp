@@ -3,8 +3,8 @@
 namespace WindowsFormsTechnic {
     public class ArmoredCar : Vehicle {
         // Ширина и высота отрисовки бронированной машины
-        protected readonly int armoredCarWidth = 2100;
-        protected readonly int armoredCarHeight = 85;
+        protected readonly int armoredCarWidth = 210;
+        protected readonly int armoredCarHeight = 850;
 
         // Конструктор
         public ArmoredCar(int maxSpeed, float weight, Color mainColor) {
@@ -24,7 +24,7 @@ namespace WindowsFormsTechnic {
 
         // Изменение направления пермещения
         public override void MoveTransport(Direction direction) {
-            float step = MaxSpeed * 100 / Weight;
+            float step = MaxSpeed * 1000 / Weight;
             switch (direction) {
                 case Direction.Right:
                     if (startPosX + step < pictureWidth - armoredCarWidth) {
@@ -39,7 +39,7 @@ namespace WindowsFormsTechnic {
                     break;
 
                 case Direction.Up:
-                    if (startPosY - step > 0) {
+                    if (startPosY - step > 10) {
                         startPosY -= step;
                     }
                     break;
