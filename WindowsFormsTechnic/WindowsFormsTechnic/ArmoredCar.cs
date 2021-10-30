@@ -3,7 +3,7 @@
 namespace WindowsFormsTechnic {
     public class ArmoredCar : Vehicle {
         // Ширина и высота отрисовки бронированной машины
-        protected readonly int armoredCarWidth = 210;
+        protected readonly int armoredCarWidth = 2100;
         protected readonly int armoredCarHeight = 85;
 
         // Конструктор
