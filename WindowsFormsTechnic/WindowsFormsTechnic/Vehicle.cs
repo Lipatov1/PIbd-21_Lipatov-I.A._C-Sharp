@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 
 namespace WindowsFormsTechnic {
-    public abstract class MilitaryEquipment : ITransport {
+    public abstract class Vehicle : ITransport {
         // Левая и правая координаты отрисовки военной техники
         protected float startPosX;
         protected float startPosY;
