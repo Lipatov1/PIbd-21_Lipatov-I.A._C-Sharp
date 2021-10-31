@@ -77,5 +77,10 @@ namespace WindowsFormsTechnic {
 				});
 			}
 		}
+
+		// Смена дополнительного цвета
+		public void SetDopColor(Color color) {
+			DopColor = color;
+		}
 	}
 }

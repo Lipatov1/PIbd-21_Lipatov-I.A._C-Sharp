@@ -16,7 +16,7 @@ namespace WindowsFormsTechnic {
         private void ReloadLevels() {
             int index = listBoxBases.SelectedIndex;
             listBoxBases.Items.Clear();
-            
+
             for (int i = 0; i < baseCollection.Keys.Count; i++) {
                 listBoxBases.Items.Add(baseCollection.Keys[i]);
             }
@@ -60,39 +60,6 @@ namespace WindowsFormsTechnic {
             }
         }
 
-        // Обработка нажатия кнопки "Припарковать бронированный автомобиль"
-        private void buttonSetArmoredCar_Click(object sender, EventArgs e) {
-            if (listBoxBases.SelectedIndex > -1) {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK) {
-                    var armoredCar = new ArmoredCar(100, 1000, dialog.Color);
-                    if (baseCollection[listBoxBases.SelectedItem.ToString()] + armoredCar != -1) {
-                        Draw();
-                    } else {
-                        MessageBox.Show("База переполнена");
-                    }
-                }
-            }
-        }
-
-        // Обработка нажатия кнопки "Припарковать cамоходную артиллерийскую установку"
-        private void buttonSetSelfPropArtilleryInstal_Click(object sender, EventArgs e) {
-            if (listBoxBases.SelectedIndex > -1) {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK) {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK) {
-                        var artillery = new SelfPropArtilleryInstal(100, 1000, dialog.Color, dialogDop.Color, true, true, true);
-                        if (baseCollection[listBoxBases.SelectedItem.ToString()] + artillery != -1) {
-                            Draw();
-                        } else {
-                            MessageBox.Show("База переполнена");
-                        }
-                    }
-                }
-            }
-        }
-
         // Обработка нажатия кнопки "Забрать"
         private void buttonTakeMilitaryEquipment_Click(object sender, EventArgs e) {
             if (listBoxBases.SelectedIndex > -1 && maskedTextBoxPlace.Text != "") {
@@ -109,6 +76,24 @@ namespace WindowsFormsTechnic {
         // Метод обработки выбора элемента на listBoxLevels
         private void listBoxBases_SelectedIndexChanged(object sender, EventArgs e) {
             Draw();
+        }
+
+        // Обработка нажатия кнопки "Добавить военную технику"
+        private void buttonSetMilitaryEquipment_Click(object sender, EventArgs e) {
+            var formMilitaryEquipmentConfig = new FormMilitaryEquipmentConfig();
+            formMilitaryEquipmentConfig.AddEvent(AddMilitaryEquipment);
+            formMilitaryEquipmentConfig.Show();
+        }
+
+        // Метод добавления военной техники
+        private void AddMilitaryEquipment(Vehicle militaryEquipment) {
+            if (militaryEquipment != null && listBoxBases.SelectedIndex > -1) {
+                if ((baseCollection[listBoxBases.SelectedItem.ToString()]) + militaryEquipment != -1) {
+                    Draw();
+                } else {
+                    MessageBox.Show("Военную технику не удалось поставить");
+                }
+            }
         }
     }
 }

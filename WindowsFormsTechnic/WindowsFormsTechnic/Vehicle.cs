@@ -27,6 +27,10 @@ namespace WindowsFormsTechnic {
             pictureHeight = height;
         }
 
+        public void SetMainColor(Color color) {
+            MainColor = color;
+        }
+
         // Отрисовка военной техники
         public abstract void DrawTransport(Graphics g);
 
