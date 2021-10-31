@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 
 namespace WindowsFormsTechnic {
+	// Класс отрисовки cамоходной артиллерийской установки
 	public class SelfPropArtilleryInstal : ArmoredCar {
 		// Дополнительный цвет cамоходной артиллерийской установки
 		public Color DopColor { private set; get; }
@@ -35,17 +36,19 @@ namespace WindowsFormsTechnic {
 			base.DrawTransport(g);
 
 			// Отрисовываем гусеницу
-			g.FillRectangle(brDarkOlive, startPosX + 25, startPosY + 50, 160, 35);
-			g.DrawEllipse(penBlack, startPosX + 5, startPosY + 45, 35, 35);
-			g.DrawEllipse(penBlack, startPosX + 170, startPosY + 45, 35, 35);
-			g.DrawEllipse(penBlack, startPosX + 50, startPosY + 62, 20, 20);
-			g.DrawEllipse(penBlack, startPosX + 80, startPosY + 62, 20, 20);
-			g.DrawEllipse(penBlack, startPosX + 110, startPosY + 62, 20, 20);
-			g.DrawEllipse(penBlack, startPosX + 140, startPosY + 62, 20, 20);
-			g.FillEllipse(brBlack, startPosX + 70, startPosY + 45, 10, 10);
-			g.FillEllipse(brBlack, startPosX + 100, startPosY + 45, 10, 10);
-			g.FillEllipse(brBlack, startPosX + 130, startPosY + 45, 10, 10);
-			g.FillRectangle(brMain, startPosX + 7, startPosY + 30, 198, 20);
+			if (Сaterpillar) {
+				g.FillRectangle(brDarkOlive, startPosX + 25, startPosY + 50, 160, 35);
+				g.DrawEllipse(penBlack, startPosX + 5, startPosY + 45, 35, 35);
+				g.DrawEllipse(penBlack, startPosX + 170, startPosY + 45, 35, 35);
+				g.DrawEllipse(penBlack, startPosX + 50, startPosY + 62, 20, 20);
+				g.DrawEllipse(penBlack, startPosX + 80, startPosY + 62, 20, 20);
+				g.DrawEllipse(penBlack, startPosX + 110, startPosY + 62, 20, 20);
+				g.DrawEllipse(penBlack, startPosX + 140, startPosY + 62, 20, 20);
+				g.FillEllipse(brBlack, startPosX + 70, startPosY + 45, 10, 10);
+				g.FillEllipse(brBlack, startPosX + 100, startPosY + 45, 10, 10);
+				g.FillEllipse(brBlack, startPosX + 130, startPosY + 45, 10, 10);
+				g.FillRectangle(brMain, startPosX + 7, startPosY + 30, 198, 20);
+			}
 
 			// Отрисовываем камуфляж
 			if (Camouflage) {
