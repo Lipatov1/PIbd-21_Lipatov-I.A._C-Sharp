@@ -30,7 +30,6 @@ namespace WindowsFormsTechnic
         private void InitializeComponent()
         {
             this.buttonSetArmoredCar = new System.Windows.Forms.Button();
-            this.buttonSetSelfPropArtilleryInstal = new System.Windows.Forms.Button();
             this.groupBoxTakeMilitaryEquipment = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
             this.labelPlace = new System.Windows.Forms.Label();
@@ -51,26 +50,16 @@ namespace WindowsFormsTechnic
             this.buttonSetArmoredCar.Name = "buttonSetArmoredCar";
             this.buttonSetArmoredCar.Size = new System.Drawing.Size(121, 60);
             this.buttonSetArmoredCar.TabIndex = 0;
-            this.buttonSetArmoredCar.Text = "Припарковать бронированный автомобиль";
+            this.buttonSetArmoredCar.Text = "Добавить военную технику";
             this.buttonSetArmoredCar.UseVisualStyleBackColor = true;
-            this.buttonSetArmoredCar.Click += new System.EventHandler(this.buttonSetArmoredCar_Click);
-            // 
-            // buttonSetSelfPropArtilleryInstal
-            // 
-            this.buttonSetSelfPropArtilleryInstal.Location = new System.Drawing.Point(934, 283);
-            this.buttonSetSelfPropArtilleryInstal.Name = "buttonSetSelfPropArtilleryInstal";
-            this.buttonSetSelfPropArtilleryInstal.Size = new System.Drawing.Size(121, 73);
-            this.buttonSetSelfPropArtilleryInstal.TabIndex = 1;
-            this.buttonSetSelfPropArtilleryInstal.Text = "Припарковать cамоходную артиллерийскую установку";
-            this.buttonSetSelfPropArtilleryInstal.UseVisualStyleBackColor = true;
-            this.buttonSetSelfPropArtilleryInstal.Click += new System.EventHandler(this.buttonSetSelfPropArtilleryInstal_Click);
+            this.buttonSetArmoredCar.Click += new System.EventHandler(this.buttonSetMilitaryEquipment_Click);
             // 
             // groupBoxTakeMilitaryEquipment
             // 
             this.groupBoxTakeMilitaryEquipment.Controls.Add(this.maskedTextBoxPlace);
             this.groupBoxTakeMilitaryEquipment.Controls.Add(this.labelPlace);
             this.groupBoxTakeMilitaryEquipment.Controls.Add(this.buttonTakeMilitaryEquipment);
-            this.groupBoxTakeMilitaryEquipment.Location = new System.Drawing.Point(934, 362);
+            this.groupBoxTakeMilitaryEquipment.Location = new System.Drawing.Point(934, 283);
             this.groupBoxTakeMilitaryEquipment.Name = "groupBoxTakeMilitaryEquipment";
             this.groupBoxTakeMilitaryEquipment.Size = new System.Drawing.Size(121, 87);
             this.groupBoxTakeMilitaryEquipment.TabIndex = 2;
@@ -171,7 +160,6 @@ namespace WindowsFormsTechnic
             this.Controls.Add(this.labelBases);
             this.Controls.Add(this.pictureBoxBase);
             this.Controls.Add(this.groupBoxTakeMilitaryEquipment);
-            this.Controls.Add(this.buttonSetSelfPropArtilleryInstal);
             this.Controls.Add(this.buttonSetArmoredCar);
             this.Name = "FormBase";
             this.Text = "База";
@@ -186,7 +174,6 @@ namespace WindowsFormsTechnic
         #endregion
 
         private System.Windows.Forms.Button buttonSetArmoredCar;
-        private System.Windows.Forms.Button buttonSetSelfPropArtilleryInstal;
         private System.Windows.Forms.GroupBox groupBoxTakeMilitaryEquipment;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
         private System.Windows.Forms.Label labelPlace;
