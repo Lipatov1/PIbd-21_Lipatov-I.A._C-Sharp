@@ -80,15 +80,15 @@ namespace WindowsFormsTechnic {
 
         // Обработка нажатия кнопки "Добавить военную технику"
         private void buttonSetMilitaryEquipment_Click(object sender, EventArgs e) {
-            var formCarConfig = new FormMilitaryEquipmentConfig();
-            formCarConfig.AddEvent(AddMilitaryEquipment);
-            formCarConfig.Show();
+            var formMilitaryEquipmentConfig = new FormMilitaryEquipmentConfig();
+            formMilitaryEquipmentConfig.AddEvent(AddMilitaryEquipment);
+            formMilitaryEquipmentConfig.Show();
         }
 
         // Метод добавления военной техники
-        private void AddMilitaryEquipment(Vehicle car) {
-            if (car != null && listBoxBases.SelectedIndex > -1) {
-                if ((baseCollection[listBoxBases.SelectedItem.ToString()]) + car != -1) {
+        private void AddMilitaryEquipment(Vehicle militaryEquipment) {
+            if (militaryEquipment != null && listBoxBases.SelectedIndex > -1) {
+                if ((baseCollection[listBoxBases.SelectedItem.ToString()]) + militaryEquipment != -1) {
                     Draw();
                 } else {
                     MessageBox.Show("Военную технику не удалось поставить");
