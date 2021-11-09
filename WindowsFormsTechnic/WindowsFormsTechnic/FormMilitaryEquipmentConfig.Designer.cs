@@ -33,6 +33,7 @@ namespace WindowsFormsTechnic
             this.labelSelfPropArtilleryInstal = new System.Windows.Forms.Label();
             this.labelArmoredCar = new System.Windows.Forms.Label();
             this.groupBoxMilitaryEquipmentParams = new System.Windows.Forms.GroupBox();
+            this.checkBoxСaterpillar = new System.Windows.Forms.CheckBox();
             this.checkBoxStar = new System.Windows.Forms.CheckBox();
             this.checkBoxCamouflage = new System.Windows.Forms.CheckBox();
             this.numericUpDownWeight = new System.Windows.Forms.NumericUpDown();
@@ -54,7 +55,6 @@ namespace WindowsFormsTechnic
             this.labelMainColor = new System.Windows.Forms.Label();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.checkBoxСaterpillar = new System.Windows.Forms.CheckBox();
             this.groupBoxMilitaryEquipmentType.SuspendLayout();
             this.groupBoxMilitaryEquipmentParams.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
@@ -112,6 +112,16 @@ namespace WindowsFormsTechnic
             this.groupBoxMilitaryEquipmentParams.TabIndex = 1;
             this.groupBoxMilitaryEquipmentParams.TabStop = false;
             this.groupBoxMilitaryEquipmentParams.Text = "Параметры";
+            // 
+            // checkBoxСaterpillar
+            // 
+            this.checkBoxСaterpillar.AutoSize = true;
+            this.checkBoxСaterpillar.Location = new System.Drawing.Point(276, 68);
+            this.checkBoxСaterpillar.Name = "checkBoxСaterpillar";
+            this.checkBoxСaterpillar.Size = new System.Drawing.Size(77, 19);
+            this.checkBoxСaterpillar.TabIndex = 6;
+            this.checkBoxСaterpillar.Text = "Гусеница";
+            this.checkBoxСaterpillar.UseVisualStyleBackColor = true;
             // 
             // checkBoxStar
             // 
@@ -349,16 +359,6 @@ namespace WindowsFormsTechnic
             this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxСaterpillar
-            // 
-            this.checkBoxСaterpillar.AutoSize = true;
-            this.checkBoxСaterpillar.Location = new System.Drawing.Point(276, 68);
-            this.checkBoxСaterpillar.Name = "checkBoxСaterpillar";
-            this.checkBoxСaterpillar.Size = new System.Drawing.Size(77, 19);
-            this.checkBoxСaterpillar.TabIndex = 6;
-            this.checkBoxСaterpillar.Text = "Гусеница";
-            this.checkBoxСaterpillar.UseVisualStyleBackColor = true;
             // 
             // FormMilitaryEquipmentConfig
             // 

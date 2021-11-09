@@ -29,7 +29,7 @@ namespace WindowsFormsTechnic
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonSetArmoredCar = new System.Windows.Forms.Button();
+            this.SetMilitaryEquipment = new System.Windows.Forms.Button();
             this.groupBoxTakeMilitaryEquipment = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
             this.labelPlace = new System.Windows.Forms.Label();
@@ -40,26 +40,33 @@ namespace WindowsFormsTechnic
             this.buttonAddBase = new System.Windows.Forms.Button();
             this.listBoxBases = new System.Windows.Forms.ListBox();
             this.buttonRemoveBase = new System.Windows.Forms.Button();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBoxTakeMilitaryEquipment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBase)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonSetArmoredCar
+            // SetMilitaryEquipment
             // 
-            this.buttonSetArmoredCar.Location = new System.Drawing.Point(934, 217);
-            this.buttonSetArmoredCar.Name = "buttonSetArmoredCar";
-            this.buttonSetArmoredCar.Size = new System.Drawing.Size(121, 60);
-            this.buttonSetArmoredCar.TabIndex = 0;
-            this.buttonSetArmoredCar.Text = "Добавить военную технику";
-            this.buttonSetArmoredCar.UseVisualStyleBackColor = true;
-            this.buttonSetArmoredCar.Click += new System.EventHandler(this.buttonSetMilitaryEquipment_Click);
+            this.SetMilitaryEquipment.Location = new System.Drawing.Point(934, 240);
+            this.SetMilitaryEquipment.Name = "SetMilitaryEquipment";
+            this.SetMilitaryEquipment.Size = new System.Drawing.Size(121, 60);
+            this.SetMilitaryEquipment.TabIndex = 0;
+            this.SetMilitaryEquipment.Text = "Добавить военную технику";
+            this.SetMilitaryEquipment.UseVisualStyleBackColor = true;
+            this.SetMilitaryEquipment.Click += new System.EventHandler(this.buttonSetMilitaryEquipment_Click);
             // 
             // groupBoxTakeMilitaryEquipment
             // 
             this.groupBoxTakeMilitaryEquipment.Controls.Add(this.maskedTextBoxPlace);
             this.groupBoxTakeMilitaryEquipment.Controls.Add(this.labelPlace);
             this.groupBoxTakeMilitaryEquipment.Controls.Add(this.buttonTakeMilitaryEquipment);
-            this.groupBoxTakeMilitaryEquipment.Location = new System.Drawing.Point(934, 283);
+            this.groupBoxTakeMilitaryEquipment.Location = new System.Drawing.Point(934, 306);
             this.groupBoxTakeMilitaryEquipment.Name = "groupBoxTakeMilitaryEquipment";
             this.groupBoxTakeMilitaryEquipment.Size = new System.Drawing.Size(121, 87);
             this.groupBoxTakeMilitaryEquipment.TabIndex = 2;
@@ -95,16 +102,16 @@ namespace WindowsFormsTechnic
             // pictureBoxBase
             // 
             this.pictureBoxBase.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxBase.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxBase.Location = new System.Drawing.Point(0, 24);
             this.pictureBoxBase.Name = "pictureBoxBase";
-            this.pictureBoxBase.Size = new System.Drawing.Size(925, 461);
+            this.pictureBoxBase.Size = new System.Drawing.Size(925, 437);
             this.pictureBoxBase.TabIndex = 3;
             this.pictureBoxBase.TabStop = false;
             // 
             // labelBases
             // 
             this.labelBases.AutoSize = true;
-            this.labelBases.Location = new System.Drawing.Point(978, 9);
+            this.labelBases.Location = new System.Drawing.Point(978, 32);
             this.labelBases.Name = "labelBases";
             this.labelBases.Size = new System.Drawing.Size(37, 15);
             this.labelBases.TabIndex = 4;
@@ -112,14 +119,14 @@ namespace WindowsFormsTechnic
             // 
             // textBoxNewLevelName
             // 
-            this.textBoxNewLevelName.Location = new System.Drawing.Point(934, 27);
+            this.textBoxNewLevelName.Location = new System.Drawing.Point(934, 50);
             this.textBoxNewLevelName.Name = "textBoxNewLevelName";
             this.textBoxNewLevelName.Size = new System.Drawing.Size(121, 23);
             this.textBoxNewLevelName.TabIndex = 5;
             // 
             // buttonAddBase
             // 
-            this.buttonAddBase.Location = new System.Drawing.Point(934, 56);
+            this.buttonAddBase.Location = new System.Drawing.Point(934, 79);
             this.buttonAddBase.Name = "buttonAddBase";
             this.buttonAddBase.Size = new System.Drawing.Size(121, 23);
             this.buttonAddBase.TabIndex = 6;
@@ -131,7 +138,7 @@ namespace WindowsFormsTechnic
             // 
             this.listBoxBases.FormattingEnabled = true;
             this.listBoxBases.ItemHeight = 15;
-            this.listBoxBases.Location = new System.Drawing.Point(934, 85);
+            this.listBoxBases.Location = new System.Drawing.Point(934, 108);
             this.listBoxBases.Name = "listBoxBases";
             this.listBoxBases.Size = new System.Drawing.Size(121, 94);
             this.listBoxBases.TabIndex = 7;
@@ -139,7 +146,7 @@ namespace WindowsFormsTechnic
             // 
             // buttonRemoveBase
             // 
-            this.buttonRemoveBase.Location = new System.Drawing.Point(934, 185);
+            this.buttonRemoveBase.Location = new System.Drawing.Point(934, 208);
             this.buttonRemoveBase.Name = "buttonRemoveBase";
             this.buttonRemoveBase.Size = new System.Drawing.Size(121, 23);
             this.buttonRemoveBase.TabIndex = 8;
@@ -147,6 +154,48 @@ namespace WindowsFormsTechnic
             this.buttonRemoveBase.UseVisualStyleBackColor = true;
             this.buttonRemoveBase.AutoSizeChanged += new System.EventHandler(this.buttonDelBase_Click);
             this.buttonRemoveBase.Click += new System.EventHandler(this.buttonDelBase_Click);
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(1064, 24);
+            this.menuStrip.TabIndex = 9;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьToolStripMenuItem,
+            this.загрузитьToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // сохранитьToolStripMenuItem
+            // 
+            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            // 
+            // загрузитьToolStripMenuItem
+            // 
+            this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.загрузитьToolStripMenuItem.Text = "Загрузить";
+            this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.Filter = "txt file | *.txt";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            this.openFileDialog.Filter = "txt file | *.txt";
             // 
             // FormBase
             // 
@@ -160,12 +209,16 @@ namespace WindowsFormsTechnic
             this.Controls.Add(this.labelBases);
             this.Controls.Add(this.pictureBoxBase);
             this.Controls.Add(this.groupBoxTakeMilitaryEquipment);
-            this.Controls.Add(this.buttonSetArmoredCar);
+            this.Controls.Add(this.SetMilitaryEquipment);
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "FormBase";
             this.Text = "База";
             this.groupBoxTakeMilitaryEquipment.ResumeLayout(false);
             this.groupBoxTakeMilitaryEquipment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBase)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,7 +226,7 @@ namespace WindowsFormsTechnic
 
         #endregion
 
-        private System.Windows.Forms.Button buttonSetArmoredCar;
+        private System.Windows.Forms.Button SetMilitaryEquipment;
         private System.Windows.Forms.GroupBox groupBoxTakeMilitaryEquipment;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
         private System.Windows.Forms.Label labelPlace;
@@ -184,5 +237,11 @@ namespace WindowsFormsTechnic
         private System.Windows.Forms.Button buttonAddBase;
         private System.Windows.Forms.ListBox listBoxBases;
         private System.Windows.Forms.Button buttonRemoveBase;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

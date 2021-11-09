@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System;
 
 namespace WindowsFormsTechnic {
 	// Класс отрисовки cамоходной артиллерийской установки
@@ -22,6 +23,20 @@ namespace WindowsFormsTechnic {
 			Camouflage = camouflage;
 			Star = star;
 			Сaterpillar = caterpillar;
+		}
+
+		// Конструктор для загрузки с файла
+		public SelfPropArtilleryInstal(string info) : base(info) {
+			string[] strs = info.Split(separator);
+			if (strs.Length == 7) {
+				MaxSpeed = Convert.ToInt32(strs[0]);
+				Weight = Convert.ToInt32(strs[1]);
+				MainColor = Color.FromName(strs[2]);
+				DopColor = Color.FromName(strs[3]);
+				Camouflage = Convert.ToBoolean(strs[4]);
+				Star = Convert.ToBoolean(strs[5]);
+				Сaterpillar = Convert.ToBoolean(strs[6]);
+			}
 		}
 
 		// Отрисовка cамоходной артиллерийской установки
@@ -81,6 +96,10 @@ namespace WindowsFormsTechnic {
 		// Смена дополнительного цвета
 		public void SetDopColor(Color color) {
 			DopColor = color;
+		}
+
+		public override string ToString() {
+			return $"{base.ToString()}{separator}{DopColor.Name}{separator}{Camouflage}{separator}{Star}{separator}{Сaterpillar}";
 		}
 	}
 }

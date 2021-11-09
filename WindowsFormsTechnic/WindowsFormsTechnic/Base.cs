@@ -67,5 +67,13 @@ namespace WindowsFormsTechnic {
                 g.DrawLine(pen, i * widthParkingPlace, 0, i * widthParkingPlace, (pictureHeight / heightParkingPlace) * heightParkingPlace);
             }
         }
+
+        // Функция получения элементов из списка
+        public T GetNext(int index) {
+            if (index < 0 || index >= places.Count) {
+                return null;
+            }
+            return places[index];
+        }
     }
 }
