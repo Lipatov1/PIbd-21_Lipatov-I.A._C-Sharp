@@ -50,8 +50,12 @@ namespace WindowsFormsTechnic {
             }
         }
 
-        // Сохранение информации по автомобилям на парковках в файл
+        // Сохранение информации по технике на базах в файл
         public bool SaveData(string filename) {
+            if (File.Exists(filename)) {
+                File.Delete(filename);
+            }
+
             using (StreamWriter sw = new StreamWriter(filename)) {
                 sw.WriteLine("BaseCollection");
                 foreach (var level in baseStages) {
@@ -74,7 +78,7 @@ namespace WindowsFormsTechnic {
             }
         }
 
-        // Загрузка информации по автомобилям на парковках из файла
+        // Загрузка информации по техникам на базах из файла
         public bool LoadData(string filename) {
             if (!File.Exists(filename)) {
                 return false;
