@@ -51,7 +51,7 @@ namespace WindowsFormsTechnic {
         }
 
         // Сохранение информации по технике на базах в файл
-        public bool SaveData(string filename) {
+        public void SaveData(string filename) {
             if (File.Exists(filename)) {
                 File.Delete(filename);
             }
@@ -74,21 +74,20 @@ namespace WindowsFormsTechnic {
                         }
                     }
                 }
-                return true;
             }
         }
 
         // Загрузка информации по техникам на базах из файла
-        public bool LoadData(string filename) {
+        public void LoadData(string filename) {
             if (!File.Exists(filename)) {
-                return false;
+                throw new FileNotFoundException();
             }
 
             using (StreamReader sr = new StreamReader(filename)) {
                 if (sr.ReadLine().Contains("BaseCollection")) {
                     baseStages.Clear();
                 } else {
-                    return false;
+                    throw new FileLoadException("Неверный формат файла");
                 }
 
                 Vehicle militaryEquipment = null;
@@ -107,11 +106,10 @@ namespace WindowsFormsTechnic {
                         }
 
                         if (baseStages[key] + militaryEquipment == -1) {
-                            return false;
+                            throw new BaseOverflowException();
                         }
                     }
                 }
-                return true;
             }
         }
     }

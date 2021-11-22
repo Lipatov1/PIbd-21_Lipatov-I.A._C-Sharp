@@ -30,21 +30,22 @@ namespace WindowsFormsTechnic {
 
         // Перегрузка оператора сложения
         public static int operator +(Base<T> basePark, T militaryEquipment) {
-            if (basePark.places.Count < basePark.maxCount) {
-                basePark.places.Add(militaryEquipment);
-                return 1;
+            if (basePark.places.Count >= basePark.maxCount) {
+                throw new BaseOverflowException();
+                //return -1;
             }
-            return -1;
+            basePark.places.Add(militaryEquipment);
+            return 1;
         }
 
         // Перегрузка оператора вычитания
         public static T operator -(Base<T> basePark, int index) {
-            if (index >= 0 && index < basePark.places.Count) {
-                T militaryEquipment = basePark.places[index];
-                basePark.places.RemoveAt(index);
-                return militaryEquipment;
+            if (index < -1 || index > basePark.places.Count) {
+                throw new BaseNotFoundException(index);
             }
-            return null;
+            T militaryEquipment = basePark.places[index];
+            basePark.places.RemoveAt(index);
+            return militaryEquipment;
         }
 
         // Метод отрисовки базы
