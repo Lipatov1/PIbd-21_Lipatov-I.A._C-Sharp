@@ -32,7 +32,6 @@ namespace WindowsFormsTechnic {
         public static int operator +(Base<T> basePark, T militaryEquipment) {
             if (basePark.places.Count >= basePark.maxCount) {
                 throw new BaseOverflowException();
-                //return -1;
             }
             basePark.places.Add(militaryEquipment);
             return 1;

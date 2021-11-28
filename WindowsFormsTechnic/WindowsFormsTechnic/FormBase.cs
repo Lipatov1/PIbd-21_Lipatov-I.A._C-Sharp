@@ -110,7 +110,7 @@ namespace WindowsFormsTechnic {
                 try {
                     if ((baseCollection[listBoxBases.SelectedItem.ToString()]) + militaryEquipment != -1) {
                         Draw();
-                        logger.Info($"Добавлен технику {militaryEquipment}");
+                        logger.Info($"Добавлена техника {militaryEquipment}");
                     } else {
                         MessageBox.Show("Технику не удалось поставить");
                     }
