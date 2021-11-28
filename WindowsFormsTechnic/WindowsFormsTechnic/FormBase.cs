@@ -11,11 +11,10 @@ namespace WindowsFormsTechnic {
         // Логгер
         private readonly Logger logger;
 
-
         public FormBase() {
             InitializeComponent();
             baseCollection = new BaseCollection(pictureBoxBase.Width, pictureBoxBase.Height);
-            logger = LogManager.GetCurrentClassLogger();
+            logger = NLog.Web.NLogBuilder.ConfigureNLog("..\\..\\..\\App.config").GetCurrentClassLogger();
         }
 
         // Заполнение listBoxLevels
