@@ -3,7 +3,7 @@ using System;
 
 namespace WindowsFormsTechnic {
 	// Класс отрисовки cамоходной артиллерийской установки
-	public class SelfPropArtilleryInstal : ArmoredCar {
+	public class SelfPropArtilleryInstal : ArmoredCar, IEquatable<SelfPropArtilleryInstal> {
 		// Дополнительный цвет cамоходной артиллерийской установки
 		public Color DopColor { private set; get; }
 
@@ -100,6 +100,50 @@ namespace WindowsFormsTechnic {
 
 		public override string ToString() {
 			return $"{base.ToString()}{separator}{DopColor.Name}{separator}{Camouflage}{separator}{Star}{separator}{Сaterpillar}";
+		}
+
+		// Метод интерфейса IEquatable для класса SportCar
+		public bool Equals(SelfPropArtilleryInstal other) {
+			if (other == null) {
+                return false;
+            }
+            if (GetType().Name != other.GetType().Name) {
+                return false;
+            }
+            if (MaxSpeed != other.MaxSpeed) {
+                return false;
+            }
+            if (Weight != other.Weight) {
+                return false;
+            }
+            if (MainColor != other.MainColor) {
+                return false;
+            }
+			if (DopColor != other.DopColor) {
+				return false;
+			}
+			if (Camouflage != other.Camouflage) {
+				return false;
+			}
+			if (Star != other.Star) {
+				return false;
+			}
+			if (Сaterpillar != other.Сaterpillar) {
+				return false;
+			}
+			return true;
+		}
+
+		// Перегрузка метода от object
+		public override bool Equals(Object obj) {
+			if (obj == null) {
+				return false;
+			}
+			if (!(obj is SelfPropArtilleryInstal carObj)) {
+				return false;
+			} else {
+				return Equals(carObj);
+			}
 		}
 	}
 }

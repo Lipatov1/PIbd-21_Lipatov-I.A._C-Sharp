@@ -1,9 +1,11 @@
 ﻿using System.Drawing;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace WindowsFormsTechnic {
     // Параметризованный класс для хранения набора объектов от интерфейса ITransport
-    public class Base<T> where T : class, ITransport {
+    public class Base<T> : IEnumerator<T>, IEnumerable<T> where T : class, ITransport
+    {
         // Список объектов, которые храним
         private readonly List<T> places;
 
@@ -18,6 +20,11 @@ namespace WindowsFormsTechnic {
         private readonly int widthParkingPlace = 460;
         private readonly int heightParkingPlace = 105;
 
+        // Текущий элемент для вывода через IEnumerator
+        private int currentIndex;
+        public T Current => places[currentIndex];
+        object IEnumerator.Current => places[currentIndex];
+
         // Конструктор
         public Base(int picWidth, int picHeight) {
             int width = picWidth / widthParkingPlace;
@@ -26,6 +33,7 @@ namespace WindowsFormsTechnic {
             pictureWidth = picWidth;
             pictureHeight = picHeight;
             places = new List<T>();
+            currentIndex = -1;
         }
 
         // Перегрузка оператора сложения
@@ -33,6 +41,10 @@ namespace WindowsFormsTechnic {
             if (basePark.places.Count >= basePark.maxCount) {
                 throw new BaseOverflowException();
             }
+            if (basePark.places.Contains(militaryEquipment)) {
+                throw new BaseAlreadyHaveException();
+            }
+
             basePark.places.Add(militaryEquipment);
             return 1;
         }
@@ -74,6 +86,34 @@ namespace WindowsFormsTechnic {
                 return null;
             }
             return places[index];
+        }
+
+        // Сортировка техники на базе
+        public void Sort() => places.Sort((IComparer<T>)new MilitaryEquipmentComparer());
+        
+        // Метод интерфейса IEnumerator, вызываемый при удалении объекта
+        public void Dispose() {
+        }
+
+        // Метод интерфейса IEnumerator для перехода к следующему элементу или началу коллекции
+        public bool MoveNext() {
+            currentIndex++;
+            return currentIndex < places.Count;
+        }
+
+        // Метод интерфейса IEnumerator для сброса и возврата к началу коллекции
+        public void Reset() {
+            currentIndex = -1;
+        }
+
+        // Метод интерфейса IEnumerable
+        public IEnumerator<T> GetEnumerator() {
+            return this;
+        }
+
+        // Метод интерфейса IEnumerable
+        IEnumerator IEnumerable.GetEnumerator() {
+            return this;
         }
     }
 }

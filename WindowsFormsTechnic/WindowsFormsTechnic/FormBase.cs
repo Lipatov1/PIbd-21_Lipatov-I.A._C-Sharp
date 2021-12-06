@@ -156,10 +156,22 @@ namespace WindowsFormsTechnic {
                     MessageBox.Show(ex.Message, "Занятое место", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Warn(ex.Message);
                 }
+                catch (BaseAlreadyHaveException ex) {
+                    MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                }
                 catch (Exception ex) {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Warn(ex.Message);
                 }
+            }
+        }
+
+        private void buttonSort_Click(object sender, EventArgs e) {
+            if (listBoxBases.SelectedIndex > -1) {
+                baseCollection[listBoxBases.SelectedItem.ToString()].Sort();
+                Draw();
+                logger.Info("Сортировка уровней");
             }
         }
     }

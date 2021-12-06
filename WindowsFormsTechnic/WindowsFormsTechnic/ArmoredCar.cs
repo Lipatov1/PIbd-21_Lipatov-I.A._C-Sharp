@@ -2,7 +2,7 @@
 using System;
 
 namespace WindowsFormsTechnic {
-    public class ArmoredCar : Vehicle {
+    public class ArmoredCar : Vehicle, IEquatable<ArmoredCar> {
         // Ширина и высота отрисовки бронированной машины
         protected readonly int armoredCarWidth = 210;
         protected readonly int armoredCarHeight = 85;
@@ -86,6 +86,39 @@ namespace WindowsFormsTechnic {
 
         public override string ToString() {
             return $"{MaxSpeed}{separator}{Weight}{separator}{MainColor.Name}";
+        }
+
+        // Метод интерфейса IEquatable для класса ArmoredCar
+        public bool Equals(ArmoredCar other) {
+            if (other == null) {
+                return false;
+            }
+            if (GetType().Name != other.GetType().Name) {
+                return false;
+            }
+            if (MaxSpeed != other.MaxSpeed) {
+                return false;
+            }
+            if (Weight != other.Weight) {
+                return false;
+            }
+            if (MainColor != other.MainColor) {
+                return false;
+            }
+            return true;
+        }
+
+        // Перегрузка метода от object
+        public override bool Equals(Object obj) {
+            if (obj == null) {
+                return false;
+            }
+            if (!(obj is ArmoredCar carObj)) {
+                return false;
+            }
+            else {
+                return Equals(carObj);
+            }
         }
     }
 }
