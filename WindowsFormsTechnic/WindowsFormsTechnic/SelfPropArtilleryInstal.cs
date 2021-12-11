@@ -104,20 +104,20 @@ namespace WindowsFormsTechnic {
 		// Метод интерфейса IEquatable для класса SelfPropArtilleryInstal
 		public bool Equals(SelfPropArtilleryInstal other) {
 			if (other == null) {
-                return false;
-            }
-            if (GetType().Name != other.GetType().Name) {
-                return false;
-            }
-            if (MaxSpeed != other.MaxSpeed) {
-                return false;
-            }
-            if (Weight != other.Weight) {
-                return false;
-            }
-            if (MainColor != other.MainColor) {
-                return false;
-            }
+				return false;
+			}
+			if (GetType().Name != other.GetType().Name) {
+				return false;
+			}
+			if (MaxSpeed != other.MaxSpeed) {
+				return false;
+			}
+			if (Weight != other.Weight) {
+				return false;
+			}
+			if (MainColor != other.MainColor) {
+				return false;
+			}
 			if (DopColor != other.DopColor) {
 				return false;
 			}
@@ -132,7 +132,7 @@ namespace WindowsFormsTechnic {
 			}
 			return true;
 		}
-
+		
 		// Перегрузка метода от object
 		public override bool Equals(Object obj) {
 			if (obj == null) {
