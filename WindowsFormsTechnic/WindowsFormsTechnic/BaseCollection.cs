@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using System;
 
 namespace WindowsFormsTechnic {
     // Класс-коллекция баз
@@ -61,8 +62,7 @@ namespace WindowsFormsTechnic {
                 foreach (var level in baseStages) {
                     sw.WriteLine("Base" + separator + level.Key);
 
-                    ITransport militaryEquipment = null;
-                    for (int i = 0; (militaryEquipment = level.Value.GetNext(i)) != null; i++) {
+                    foreach (Vehicle militaryEquipment in level.Value) {
                         if (militaryEquipment != null)  {
                             if (militaryEquipment.GetType().Name == "ArmoredCar") {
                                 sw.Write("ArmoredCar" + separator);
@@ -106,7 +106,7 @@ namespace WindowsFormsTechnic {
                         }
 
                         if (baseStages[key] + militaryEquipment == -1) {
-                            throw new BaseOverflowException();
+                            throw new Exception("Не удалось загрузить технику на базу");
                         }
                     }
                 }
