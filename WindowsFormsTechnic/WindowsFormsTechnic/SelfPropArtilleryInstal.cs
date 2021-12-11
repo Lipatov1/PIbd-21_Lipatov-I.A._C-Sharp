@@ -102,7 +102,7 @@ namespace WindowsFormsTechnic {
 			return $"{base.ToString()}{separator}{DopColor.Name}{separator}{Camouflage}{separator}{Star}{separator}{Сaterpillar}";
 		}
 
-		// Метод интерфейса IEquatable для класса SportCar
+		// Метод интерфейса IEquatable для класса SelfPropArtilleryInstal
 		public bool Equals(SelfPropArtilleryInstal other) {
 			if (other == null) {
                 return false;
@@ -139,10 +139,10 @@ namespace WindowsFormsTechnic {
 			if (obj == null) {
 				return false;
 			}
-			if (!(obj is SelfPropArtilleryInstal carObj)) {
+			if (!(obj is SelfPropArtilleryInstal militaryEquipmentObj)) {
 				return false;
 			} else {
-				return Equals(carObj);
+				return Equals(militaryEquipmentObj);
 			}
 		}
 	}

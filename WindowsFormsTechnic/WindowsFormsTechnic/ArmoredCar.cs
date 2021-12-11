@@ -113,11 +113,11 @@ namespace WindowsFormsTechnic {
             if (obj == null) {
                 return false;
             }
-            if (!(obj is ArmoredCar carObj)) {
+            if (!(obj is ArmoredCar militaryEquipmentObj)) {
                 return false;
             }
             else {
-                return Equals(carObj);
+                return Equals(militaryEquipmentObj);
             }
         }
     }
