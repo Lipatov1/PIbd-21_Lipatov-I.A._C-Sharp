@@ -4,8 +4,7 @@ using System.Collections;
 
 namespace WindowsFormsTechnic {
     // Параметризованный класс для хранения набора объектов от интерфейса ITransport
-    public class Base<T> : IEnumerator<T>, IEnumerable<T> where T : class, ITransport
-    {
+    public class Base<T> : IEnumerator<T>, IEnumerable<T> where T : class, ITransport {
         // Список объектов, которые храним
         private readonly List<T> places;
 

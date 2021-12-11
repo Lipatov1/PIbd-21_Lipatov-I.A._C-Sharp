@@ -101,7 +101,6 @@ namespace WindowsFormsTechnic {
 		public override string ToString() {
 			return $"{base.ToString()}{separator}{DopColor.Name}{separator}{Camouflage}{separator}{Star}{separator}{Сaterpillar}";
 		}
-
 		// Метод интерфейса IEquatable для класса SelfPropArtilleryInstal
 		public bool Equals(SelfPropArtilleryInstal other) {
 			if (other == null) {
